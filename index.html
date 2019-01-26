@@ -304,114 +304,17 @@
 
       
         
-          
-            <p>第7章 文件和数据格式化<br>&lt; !–more–&gt;<br>7.1 文件的使用<br>文件：数据的集合和抽象，存储在辅助存储器上的一组数据序列，可以包含任何数据内容。</p>
-<p>文件类型：文本文件（由单一特定编码的字符组成）、二进制文件（比特0和比特1组成）。</p>
-<p>文件的打开和关闭：</p>
-<pre><code>使用open()函数打开文件，返回一个操作这个文件的变量，&lt;变量名&gt; = open(&lt;文件路径及文件名&gt;, &lt;打开模式&gt;)
-
-使用close()方法关闭文件，释放文件的使用授权，&lt;变量名&gt;.close()
-</code></pre><p><img src="image/p71.png"></p>
-<p>/#文本文件方式<br>f = open(“a.txt”,”rt”)<br>print(f.readline())<br>f.close()</p>
-<blockquote>
-<blockquote>
-<blockquote>
-</blockquote>
-<p>全国计算机等级考试</p>
-</blockquote>
-</blockquote>
-<p>/#二进制方式<br>f = open(“a.txt”,”rb”)<br>print(f.readline())<br>f.close()</p>
-<blockquote>
-<blockquote>
-<blockquote>
-</blockquote>
-<p>b’\xc8\xab\xb9\xfa\xbc\xc6\xcb\xe3\xbb\xfa\xb5\xc8\xbc\xb6\xbf\xbc\xca\xd4’</p>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>PATH = “D:\“<br>f = open(PATH + “a.txt”, “rt”)<br>print(f.readline())<br>国家计算机等级考试<br>f.close()<br>print(f.readline())<br>Traceback (most recent call last):<br>  File “&lt;pyshell#81&gt;”, line 1, in <module><br>    print(f.readline())<br>ValueError: I/O operation on closed file.<br> 文件的读写：</module></p>
-</blockquote>
-</blockquote>
-</blockquote>
-<p><img src="image/p72.png"></p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>f = open(“D://b.txt”, “r”)<br>s = f.read()    #适用于文件不大 结果是一个字符串<br>print(s)<br>新年都未有芳华，二月初惊见草芽。<br>白雪却嫌春色晚，故穿庭树作飞花。<br>f.close()</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>f = open(“D://b.txt”, “r”)<br>ls = f.readlines()    #结果是一个列表<br>print(ls)<br>[‘新年都未有芳华，二月初惊见草芽。\n’, ‘白雪却嫌春色晚，故穿庭树作飞花。\n’]<br>f.close()</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>f = open(“D://b.txt”, “r”)<br>s = f.read()<br>print(s)<br>新年都未有芳华，二月初惊见草芽。<br>白雪却嫌春色晚，故穿庭树作飞花。<br>f.seek(0)  # 将读取指针重置到文件开头，否则再次读取为空[]<br>ls = f.readlines()<br>print(ls)<br>[‘新年都未有芳华，二月初惊见草芽。\n’, ‘白雪却嫌春色晚，故穿庭树作飞花。\n’]<br>f.close()</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<p>/#遍历循环逐行遍历文件<br>f = open(“D://b.txt”, “r”)<br>for line in f:<br>print(line)<br>f.close()</p>
-<blockquote>
-<blockquote>
-</blockquote>
-<p>新年都未有芳华，二月初惊见草芽。</p>
-</blockquote>
-<p>白雪却嫌春色晚，故穿庭树作飞花。</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>f = open(“D://c.txt”, “w”)<br>f.write(‘新年都未有芳华\n’)<br>f.write(‘二月初惊见草芽\n’)<br>f.write(‘白雪却嫌春色晚\n’)<br>f.write(‘故穿庭树作飞花\n’)<br>f.close()</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>ls = [‘新年都未有芳华\n’, ‘二月初惊见草芽\n’,’白雪却嫌春色晚\n’,’故穿庭树作飞花\n’]<br>f = open(“D://c.txt”, “w”)<br>f.writelines(ls)<br>f.close()<br>7.2 数据组织的维度<br>数据组织：一维数据、二维数据和高维数据。</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<p>一维数据：由对等关系的有序或无序数据构成，采用线性方式组织。例如：北京、上海、天津、重庆。</p>
-<p>二维数据：也称表格数据，由关联关系数据构成，采用二维表格方式组织。例如：国家统计局发布的居民消费价格指数。</p>
-<p><img src="image/p73.png"></p>
-<p>高维数据：由键值对类型的数据构成，采用对象方式组织，可以多层嵌套。衍生出HTML、XML、JSON等具体数据组织的语法结构。</p>
-<p><img src="image/p74.png"></p>
-<p>7.3 一维数据的处理<br>一维数据的表示：</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>ls = [‘北京’, ‘上海’, ‘天津’, ‘重庆’]<br>print(ls)<br>[‘北京’, ‘上海’, ‘天津’, ‘重庆’]<br>一维数据的存储：空格分隔、逗号分隔（CSV存储格式）、换行分隔、其他特殊符号分隔（例如分号）。</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<p>列表对象输出为CSV格式文件：</p>
-<p>ls = [‘北京’, ‘上海’, ‘天津’, ‘重庆’]<br>f = open(“city.csv”, “w”)<br>f.write(“,”.join(ls)+ “\n”)<br>f.close()<br>北京,上海,天津,重庆<br>一维数据的处理：从CSV文件读入一维数据，将其表示为列表对象 </p>
-<p>f = open(“city.csv”, “r”)<br>ls = f.read().strip(‘\n’).split(“,”)<br>f.close()<br>print(ls)</p>
-<blockquote>
-<blockquote>
-<blockquote>
-</blockquote>
-<p>[‘北京’, ‘上海’, ‘天津’, ‘重庆’]<br>7.4 二维数据的处理<br>二维数据的表示：</p>
-</blockquote>
-</blockquote>
-<p><img src="image/p75.png"></p>
-<p>二维数据的存储：由一维数据组成，用CSV格式文件存储。每一行是一维数据，整个CSV文件是一个二维数据</p>
-<p>/# ls代表二维列表，此处省略<br>f = open(“cpi.csv”, “w”)<br>for row in ls:<br>    f.write(“,”.join(row)+ “\n”)<br>f.close()<br>二维数据的处理：从CSV文件读入二维数据，并将其表示为二维列表对象</p>
-<p>f = open(“cpi.csv”, “r”)<br>ls = []<br>for line in f:<br>    ls.append(line.strip(‘\n’).split(“,”))<br>f.close()<br>print(ls)<br><img src="image/p76.png"></p>
-<p>二维列表一般需要借助循环遍历实现对每个数据的处理：</p>
-<p>/#对二维数据进行格式化输出，打印成表格形状<br>for row in ls:<br>     line = “”<br>     for item in row:<br>          line += “{:10}\t”.format(item)<br>     print(line)<br><img src="image/p77.png"></p>
-
-          
+          <p>第7章 文件和数据格式化<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/01/26/全国计算机等级考试Python二级（七）/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
-    </div>
+    </p></div>
     
     
     
@@ -528,344 +431,14 @@
 
       
         
-          
-            <p>第6章 组合数据类型</p>
-<p>&lt; !–more–&gt;<br>6.1 组合数据类型的基本概念<br>最常用的组合数据类型：集合类型（一个具体的数据类型名称）、序列类型和映射类型（都是一类数据类型的总称）。</p>
-<p>集合类型：元素的集合，元素无序，用大括号（{}）表示，相同元素在集合中唯一存在，不可重复，主要用于元素去重，适合于任何组合数据类型。集合（set）。</p>
-<p>集合类型4个操作符，交集（&amp;）、并集（|）、差集 （-）、补集（^）</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>T = {1010, “1010”, 12.3, 1010, 1010}<br>print(T)<br>{1010,’1010’,12.3}</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>S = {1010, “1010”, 78.9}<br>T = {1010, “1010”, 12.3, 1010, 1010}<br>S - T<br>{78.9}<br>T – S<br>{12.3}<br>S &amp; T<br>{1010,’1010’}<br>T &amp; S<br>{1010,’1010’}<br>S ^ T<br>{78.9, 12.3}<br>T ^ S<br>{78.9, 12.3}<br>S | T<br>{78.9, 1010, 12.3,’1010’}<br>T | S<br>{1010, 12.3, 78.9,’1010’}<br>集合类型常用的操作函数或方法：</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<p><img src="image/p62.png"></p>
-<p>序列类型：元素向量，元素之间存在先后关系，通过序号访问，元素之间不排他，可以存在相同数值但位置不同的元素。字符串（str）、元组（tuple）、列表（list）。</p>
-<p>序列类型通用的操作符和函数：</p>
-<p><img src="image/p63.png"></p>
-<p>映射类型：“键-值”数据项的组合，每个元素是一个键值对，元素之间无序，表示为(key, value)。字典（map）。</p>
-<p>6.2 列表类型<br>列表：用中括号（[]）表示， 也可以通过list(x) 函数将集合或字符串类型转换成列表类型。没有长度限制，属于序列类型。</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>ls = [1010, “1010”, [1010, “1010”], 1010]<br>ls<br>[1010,’1010’, [1010,’1010’], 1010]<br>list(‘列表可以由字符串生成’)<br>[‘列’,’表’,’可’,’以’,’由’,’字’,’符’,’串’,’生’,’成’]<br>list()<br>[]<br>列表的索引：获得列表的一个元素，使用中括号作为索引操作符。</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>ls = [1010, “1010”, [1010, “1010”], 1010]<br>ls[3]<br>1010<br>ls[-2]<br>[1010,’1010’]<br>ls[5]<br>Traceback (most recent call last):<br>File “&lt;pyshell#35&gt;”, line 1, in <module><br>ls[5]<br>IndexError: list index out of range</module></p>
-</blockquote>
-</blockquote>
-</blockquote>
-<p>/#对列表元素进行遍历操作</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>ls = [1010, “1010”, [1010, “1010”], 1010]<br>for i in ls:<br>        print(i*2)<br>2020<br>10101010<br>[1010,’1010’, 1010,’1010’]<br>2020<br>列表的切片：获得列表的一个片段（一个或多个元素）。结果也是列表类型。两种方式：[列表][N: M] 或 [列表][N: M: K]</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>ls = [1010, “1010”, [1010, “1010”], 1010]<br>ls[1:4]   #从N到M（不包含M）<br>[‘1010’, [1010,’1010’], 1010]</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>ls[-1:-3]<br>[]</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>ls[-3:-1]<br>[‘1010’, [1010,’1010’]]</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>ls[0:4:2]    #从N到M（不包含M）以K为步长<br>[1010, [1010,’1010’]]<br>6.3 列表类型的操作<br>列表类型通用的操作函数：</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<p><img src="image/p63.png"></p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>ls = [1010, “1010”, [1010, “1010”], 1010]<br>len(ls)<br>4</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>lt = [“Python”, [“1010”, 1010, [1010, “Python”]]]<br>len(lt)<br>2</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>ls = [1010, 10.10, 0x1010]<br>min(ls)<br>10.1</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>lt = [“1010”, “10.10”, “Python”]<br>max(lt)<br>‘Python’</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>ls = ls + lt<br>print(ls)<br>[1010, 10.1, 4112, ‘1010’, ‘10.10’, ‘Python’]</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>min(ls)<br>Traceback (most recent call last):<br>File “&lt;pyshell#15&gt;”, line 1, in <module><br>min(ls)<br>TypeError: ‘&lt;’ not supported between instances of ‘str’ and ‘float’</module></p>
-</blockquote>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>list(“Python”)<br>[‘P’, ‘y’, ‘t’, ‘h’, ‘o’, ‘n’]</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>list({“小明”, “小红”, “小白”, “小新”})<br>[‘小红’, ‘小明’, ‘小新’, ‘小白’]</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>list({“201801”:”小明”, “201802”:”小红”, “201803”:”小白”})<br>[‘201801’,’201802’,’201803’]<br> 列表的操作方法：</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<p><img src="image/p64.png"></p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>lt = [“1010”, “10.10”, “Python”]<br>lt.append(1010)<br>print(lt)<br>[‘1010’,’10.10’,’Python’, 1010]</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>lt.append([1010, 0x1010])<br>print(lt)<br>[‘1010’,’10.10’,’Python’, 1010, [1010, 4112]]</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>lt = [“1010”, “10.10”, “Python”]<br>ls = [1010, [1010, 0x1010]]<br>ls += lt<br>print(lt)<br>[‘1010’,’10.10’,’Python’, 1010, [1010, 4112]]</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>lt = [“1010”, “10.10”, “Python”]<br>lt.insert(1, 1010)<br>print(lt)<br>[‘1010’, 1010,’10.10’,’Python’]</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>lt = [“1010”, “10.10”, “Python”]<br>lt.clear()<br>print(lt)<br>[]</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>lt = [“1010”, “10.10”, “Python”]<br>print(lt.pop(1))<br>10.10<br>print(lt)<br>[“1010”, “Python”]</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>lt = [“1010”, “10.10”, “Python”]<br>lt.remove(“10.10”)<br>print(lt)<br>[“1010”, “Python”]</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>lt = [“1010”, “10.10”, “Python”]<br>print(lt.reverse())<br>[‘Python’,’10.10’,’1010’]</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>lt = [“1010”, “10.10”, “Python”]<br>ls = lt.copy()<br>lt.clear() # 清空lt<br>print(ls)<br>[“1010”, “10.10”, “Python”]<br>保留字del对列表元素或片段进行删除：</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>lt = [“1010”, “10.10”, “Python”]<br>del lt[1]<br>print(lt)<br>[“1010”, “Python”]<br>lt = [“1010”, “10.10”, “Python”]<br>del lt[1:]<br>print(lt)<br>[“1010”]<br>6.4 字典类型<br>字典：使用大括号{}建立，每个元素是一个键值对，没有顺序且不能重复，通过字典类型实现映射。{&lt;键1&gt;:&lt;值1&gt;,  … , &lt;键n&gt;:&lt;值n&gt;}</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>d = {“201801”:”小明”,”201802”:”小红”,”201803”:”小白”}<br>print(d)<br>{‘201801’: ‘小明’,’201802’: ‘小红’,’201803’: ‘小白’}<br>字典的索引：&lt;值&gt; = &lt;字典变量&gt;[&lt;键&gt;]</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>d = {“201801”:”小明”,”201802”:”小红”,”201803”:”小白”}<br>print(d[“201802”])<br>小红</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<p>/#利用索引和赋值（=），修改字典中元素</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>d[“201802”] = ‘新小红’<br>print(d)<br>{‘201801’: ‘小明’,’201803’: ‘小白’,’201802’: ‘新小红’}</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<p>/#使用大括号可以创建字典，通过索引和赋值增加元素</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>t = {}<br>t[“201804”] = “小新”<br>print(d)<br>{‘201804’: ‘小新’}<br>6.5 字典类型的操作<br>字典类型通用的操作函数：</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<p><img src="image/p65.png"></p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>d = {“201801”:”小明”, “201802”:”小红”, “201803”:”小白”}<br>len(d)<br>3</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>d = {“201801”:”小明”, “201802”:”小红”, “201803”:”小白”}<br>min(d)<br>‘201801’<br>max(d)<br>‘201803’</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>d = dict()<br>print(d)<br>{}<br> 字典的操作方法：</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<p><img src="image/p66.png"></p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>d = {“201801”:”小明”,”201802”:”小红”,”201803”:”小白”}<br>d.keys()<br>dict_keys([‘201801’,’201802’,’201803’])+<br>type(d.keys())</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<p><class 'dict_keys'=""></class></p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>list(d.keys())<br>[‘201801’,’201802’,’201803’]<br>d = {“201801”:”小明”,”201802”:”小红”,”201803”:”小白”}<br>d.values()<br>dict_values([‘小明’,’小红’,’小白’])<br>type(d.values())</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<p><class 'dict_values'=""></class></p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>list(d.values())<br>[‘小明’,’小红’,’小白’]<br>d = {“201801”:”小明”, “201802”:”小红”, “201803”:”小白”}<br>d.items()<br>dict_items([(‘201801’,’小明’), (‘201802’,’小红’),(‘201803’,’小白’)])<br>type(d.items())</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<p><class 'dict_items'=""></class></p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>list(d.items())<br>[(‘201801’,’小明’), (‘201802’,’小红’), (‘201803’,’小白’)]<br>d = {“201801”:”小明”,”201802”:”小红”,”201803”:”小白”}<br>d.get(‘201802’)<br>‘小红’<br>d.get(‘201804’)<br>d.get(‘201804’,’不存在’)<br>‘不存在’</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>d = {“201801”:”小明”,”201802”:”小红”,”201803”:”小白”}<br>d.pop(‘201802’)<br>‘小红’<br>print(d)<br>{‘201801’: ‘小明’,’201803’: ‘小白’}<br>d.pop(‘201804’,’不存在’)<br>‘不存在’</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>d = {“201801”:”小明”, “201802”:”小红”, “201803”:”小白”}<br>print(d.popitem())<br>(‘201803’, ‘小白’)<br>d<br>{‘201801’: ‘小明’, ‘201802’: ‘小红’}</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>d = {“201801”:”小明”, “201802”:”小红”, “201803”:”小白”}<br>d.clear()<br>print(d)<br>{}</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>d = {“201801”:”小明”, “201802”:”小红”, “201803”:”小白”}<br>del d[“201801”]<br>print(d)<br>{‘201802’: ‘小红’, ‘201803’: ‘小白’}</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>d = {“201801”:”小明”, “201802”:”小红”, “201803”:”小白”}<br>“201801” in d<br>True<br>“201804” in d<br>False<br> 字典遍历循环对其元素进行遍历：</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>d = {“201801”:”小明”, “201802”:”小红”, “201803”:”小白”}<br>for k in d:<br>      print(“字典的键和值分别是：{}和{}”.format(k, d.get(k)))<br>字典的键和值分别是：201801和小明<br>字典的键和值分别是：201802和小红<br>字典的键和值分别是：201803和小白</p>
-</blockquote>
-</blockquote>
-</blockquote>
-
-          
+          <p>第6章 组合数据类型</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/01/26/全国计算机等级考试Python二级（六）/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -985,68 +558,14 @@
 
       
         
-          
-            <p>第5章 函数和代码复用</p>
-<p>&lt; !–more–&gt;<br>5.1 函数的基本使用<br>函数定义：是程序的一种基本抽象方式，通过def保留字定义。</p>
-<p>/#函数定义规则<br>def &lt;函数名&gt;(&lt;参数列表&gt;):    #多个参数用逗号分隔<br>      &lt;函数体&gt;<br>     return &lt;返回值列表&gt;</p>
-<p>/# 定义一个对整数n求阶乘的函数<br>def fact(n):<br>    s = 1<br>    for i in range(1, n+1):<br>        s *= i<br>    return s<br>函数的调用：函数定义——调用——执行——返回</p>
-<p>#函数调用规则<br>&lt;函数名&gt;(&lt;实际赋值参数列表&gt;)</p>
-<h1 id="定义一个对整数n求阶乘的函数"><a href="#定义一个对整数n求阶乘的函数" class="headerlink" title="定义一个对整数n求阶乘的函数"></a>定义一个对整数n求阶乘的函数</h1><p>def fact(n):<br>    s = 1<br>    for i in range(1, n+1):<br>        s *= i<br>    return s</p>
-<h1 id="调用整数阶乘的函数"><a href="#调用整数阶乘的函数" class="headerlink" title="调用整数阶乘的函数"></a>调用整数阶乘的函数</h1><p>print(fact(100))<br>5.2 函数的参数传递<br>参数定义时可以指定默认值，可选参数一般都放置在非可选参数后面，支持按照参数名称方式传递。</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>def multiply(x, y = 10):<br>        print(x*y)<br>multiply(99)<br>990<br>multiply(99, 2)<br>198</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>multiply(x = 99)<br>990<br>multiply(y = 2, x = 99)<br>198<br>函数返回值：使用return语句用来结束函数并将程序返回到函数被调用的位置继续执行。可以没有，不返回值。</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>def multiply(x, y = 10):<br>        return x*y, x+y</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>s = multiply(99, 2)<br>print(s)<br>(198, 101)</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>a,b = multiply(99, 2)<br>print(a)<br>198<br>print(b)<br>101<br>5.3 变量的作用域<br>局部变量：仅在函数内部使用的变量，函数退出时变量将不再存在。</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<p>全局变量：函数外定义的变量，在程序执行全过程有效。全部变量在函数内部使用时，需要提前使用保留字global声明。<br>/#局部变量z</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>def multiply(x, y = 10):<br>        z = x*y<br>        return z<br>s = multiply(99, 2)<br>print(s)<br>198<br>print(z)<br>Traceback (most recent call last):<br>  File “&lt;pyshell#11&gt;”, line 1, in <module><br>    print(z)<br>NameError: name ‘z’ is not defined</module></p>
-</blockquote>
-</blockquote>
-</blockquote>
-<p>/#全局变量n</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>n = 2<br>def multiply(x, y = 10):<br>        global n   #声明全局变量<br>        return x<em>y</em>n<br>s = multiply(99, 2)<br>print(s)<br>396<br>5.4 代码复用<br>函数封装好处是代码复用。当更新函数功能时，所有被调用处的功能都被更新。减少函数间参数和返回值的数量。</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<p>模块化设计以功能块为基本单位，两个基本要求：1.紧耦合：尽可能合理划分功能块，功能块内部耦合紧密；模块或系统间关系紧密，存在较多或复杂的相互调用。紧耦合的缺点在于更新一个模块可能导致其它模块变化，复用较困难。2.松耦合：模块间关系尽可能简单，功能块之间耦合度低。一般基于消息或协议实现，系统间交互简单，代表了模块化，是总体设计原则。</p>
-
-          
+          <p>第5章 函数和代码复用</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/01/26/全国计算机等级考试Python二级（五）/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1166,155 +685,14 @@
 
       
         
-          
-            <p>第4章 程序的控制结构</p>
-<p>&lt; !–more–&gt;<br>4.1 程序的三种控制结构<br>程序流程图7种基本元素：<br><img src="image/print41.png"></p>
-<p>起止框：表示程序逻辑的开始或结束；<br>判断框：表示一个判断条件，并根据判断结果选择不同的执行路径；<br>处理框：表示一组处理过程，对应于顺序执行的程序逻辑；<br>输入输出框：表示程序中的数据输入或结果输出；<br>注释框：表示程序的注释；<br>流向线：表示程序的控制流，以带箭头直线或曲线表达程序的执行路径；<br>连接点：表示多个流程图的连接方式，常用于将多个较小流程图组织成较大流程图。 </p>
-<p>程序由三种基本结构组成：顺序结构、分支结构和循环结构。</p>
-<p>顺序结构是程序按照线性顺序依次执行的一种运行方式：</p>
-<p><img src="image/print42.png"></p>
-<p>分支结构是程序根据条件判断结果而选择不同向前执行路径的一种运行方式，基础的分支结构是二分支结构。</p>
-<p><img src="image/print43.png"></p>
-<p>循环结构是程序根据条件判断结果向后反复执行的一种运行方式，根据循环体触发条件不同，包括条件循环和遍历循环结构</p>
-<p><img src="image/print44.png"></p>
-<p>异常处理：使用try-except保留字，以程序异常为判断条件，根据一段代码执行的正确性进行程序逻辑选择。是分支结构的一种扩展。</p>
-<p>控制循环的执行过程：break控制符用来结束当前循环，continue控制符用来结束当前循环的当次循环过程，是循环结构的一种扩展。</p>
-<p> 4.2 程序的分支结构<br> 单分支结构: if</p>
-<p>/#格式<br>if  &lt;条件&gt;:<br>    语句块<br>/# 判断用户输入数字的奇偶性<br>s = eval(input(“请输出一个整数：”))<br>if s % 2 == 0:<br>    print(“这是个偶数”)<br>print(“输入数字是:”, s）<br>/#多个条件使用and或or表示与、或关系<br>/# 判断用户输入数字的特定<br>s = eval(input(“请输出一个整数：”))<br>if s % 3 == 0 and s % 5 == 0:<br>    print(“这个数字既能被3整除，又能被5整除”)<br>print(“输入数字是:”, s)<br>二分支结构: if-else</p>
-<p>/#格式<br>if  &lt;条件&gt;:<br>    &lt;语句块1&gt;<br>else:<br>    &lt;语句块2&gt;</p>
-<p>/# 判断用户输入数字的某个属性<br>s = eval(input(“请输出一个整数：”))<br>if s % 3 == 0 and s % 5 == 0:<br>    print(“这个数字能够同时被3和5整除”)<br>else:<br>    print(“这个数字不能够同时被3和5整除”)</p>
-<p>/#简洁方式： &lt;表达式1&gt;  if  &lt;条件&gt;  else  &lt;表达式2&gt;<br>(适合&lt;表达式1&gt;和&lt;表达式2&gt;都只包含简单表达式的情况)</p>
-<p>/# 判断用户输入数字的某个属性<br>s = eval(input(“请输出一个整数：”))<br>token = “” if s % 3 == 0 and s % 5 == 0  else “不”<br>print(“这个数字{}能够同时被3和5整除”.format(token))<br>多分支结构: if-elif-else</p>
-<p>/#格式<br>if &lt;条件1&gt;:<br>    &lt;语句块1&gt;<br>elif &lt;条件2&gt;:<br>    &lt;语句块2&gt;<br>…<br>else:<br>    &lt;语句块N&gt;  </p>
-<p>/# 将百分制成绩转换为五分制成绩<br>score = eval(input(“请输出一个百分制成绩：”))<br>if score &gt;= 90.0:<br>    grade = “A”<br>elif score &gt;= 80.0:<br>    grade = “B”<br>elif score &gt;= 70.0:<br>    grade = “C”<br>elif score &gt;= 60.0:<br>    grade = “D”<br>else:<br>grade = “E”<br>print(“对应的五分制成绩是：{}”.format(grade))<br>关系操作符：</p>
-<p><img src="image/print45.png"></p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>4 &lt; 5<br>True </p>
-</blockquote>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>“Python” &gt; “python”<br>False</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<p>/#非零数值、非空数据都等价于True，0或空类型等价于False</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>0 == False<br>True</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>“” == True<br>False</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<p>/#保留字not（否）、and（与）和or（或）对条件进行逻辑运算或组合</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>not True<br>False</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>a = 80<br>( a &gt; 100) or ( a &gt; 50 and a &lt; 90)<br>True</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<p> 4.3 程序的循环结构<br>遍历循环: for</p>
-<p>/#遍历字符串<br>for  &lt;循环变量&gt;  in  &lt;字符串变量&gt;:<br>     &lt;语句块&gt; </p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>for c in “Python”:<br>    print(c)<br>P<br>y<br>t<br>h<br>o<br>n</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<p>/#使用range()函数，可以指定语句块的循环次数<br>for  &lt;循环变量&gt;  in  range(&lt;循环次数&gt;):<br>     &lt;语句块&gt; </p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>for i in range(5):<br>    print(i)<br>0<br>1<br>2<br>3<br>4</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<p>/#扩展模式，else语句在for循环正常执行之后才执行并结束<br>for &lt;循环变量&gt;  in  &lt;遍历结构&gt;:<br>    &lt;语句块1&gt;<br>else:<br>   &lt;语句块2&gt;</p>
-<p>for s in “PY”:<br>    print(“循环执行中: “ + s)<br>else:<br>    s = “循环正常结束”<br>print(s)</p>
-<blockquote>
-<blockquote>
-<blockquote>
-</blockquote>
-<p>循环执行中: P<br>循环执行中: Y<br>循环正常结束</p>
-</blockquote>
-</blockquote>
-<p>无限循环: while</p>
-<p>/#格式 while判断条件如果为True，执行循环体语句<br>while  &lt;条件&gt;:<br>       &lt;语句块&gt;</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>n = 0<br>while  n &lt; 10:<br>      print(n)<br>        n = n + 3<br>0<br>3<br>6<br>9</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<p>/#扩展模式<br>while  &lt;条件&gt;:<br>       &lt;语句块1&gt;<br>else:<br>       &lt;语句块2&gt;</p>
-<p>s, idx = “PY”, 0<br>while idx &lt; len(s):<br>    print(“循环执行中: “ + s[idx])<br>    idx += 1<br>else:<br>    s = “循环正常结束”<br>print(s)</p>
-<blockquote>
-<blockquote>
-<blockquote>
-</blockquote>
-<p>循环执行中: P<br>循环执行中: Y<br>循环正常结束<br>两个辅助循环控制的保留字：break和continue。（区别：continue语句只结束本次循环，不终止整个循环的执行，而break具备结束循环的能力。）</p>
-</blockquote>
-</blockquote>
-<p>/#break：跳出最内层for或while循环，之后程序从循环后代码继续执行<br>while True:<br>    s = input(“请输入一个名字(按Q退出): “)<br>    if s == “Q”:<br>        break<br>    print(“输入的名字是:”, s)<br>print(“程序退出”)</p>
-<blockquote>
-<blockquote>
-<blockquote>
-</blockquote>
-<p>请输入一个名字(按Q退出): 毛泽东<br>输入的名字是: 毛泽东<br>请输入一个名字(按Q退出): 邓小平<br>输入的名字是: 邓小平<br>请输入一个名字(按Q退出): Q<br>程序退出</p>
-</blockquote>
-</blockquote>
-<p>/#continue：结束当前当次循环，跳出循环体中下面尚未执行的语句，不跳出当前循环。<br>for s in “PYTHON”:<br>    if s == “Y” or s == “Y”:<br>        continue<br>    print(s, end=””)</p>
-<blockquote>
-<blockquote>
-<blockquote>
-</blockquote>
-<p>PTHON</p>
-</blockquote>
-</blockquote>
-<p>4.4 程序的异常处理<br>/#格式 当语句块1执行异常时执行语句块2<br>try:<br>    &lt;语句块1&gt;<br>except:<br>    &lt;语句块2&gt;</p>
-<p>try:<br>    n = eval(input(“请输入一个数字: “))<br>    print(“输入数字的3次方值为: “, n**3)<br>except:<br>    print(“输入错误，请输入一个数字!”)</p>
-<blockquote>
-<blockquote>
-<blockquote>
-</blockquote>
-<p>请输入一个数字: 1010<br>输入数字的3次方值为:  1030301000 </p>
-<blockquote>
-</blockquote>
-<p>请输入一个数字: python<br>输入错误，请输入一个数字!</p>
-</blockquote>
-</blockquote>
-<p>#处理运行异常</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>for i in range(5):<br>    print(10/i, end=” “)<br>Traceback (most recent call last):<br>  File “&lt;pyshell#12&gt;”, line 2, in <module><br>    print(10/i, end=” “)<br>ZeroDivisionError: division by zero<br>try:<br>    for i in range(5):<br>    print(10/i, end=” “)<br>except:<br>    print(“某种原因，出错了！”)</module></p>
-</blockquote>
-<p>某种原因，出错了！</p>
-</blockquote>
-</blockquote>
-
-          
+          <p>第4章 程序的控制结构</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/01/26/全国计算机等级考试Python二级（四）/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1434,41 +812,14 @@
 
       
         
-          
-            <p>由于我这段时间处于php的学习阶段，所以之前学的Python也忘了很多。<br>写这个blog，一方面是让自己对知识有一个更深的巩固，另一方面也是为了让后来参加Python考试的同学有参考资料。（大神勿喷）</p>
-<p>&lt; !–more–&gt;</p>
-<p>下面开始系统的备战全国计算机二级Python考试</p>
-<p>第1章 程序设计基本方法<br>1.1 程序设计语言</p>
-<p>高级语言根据执行机制分为：静态语言（C、Java）、脚本语言（JavaScript、PHP、Python）。</p>
-<p>执行方式：编译（静态语言）、解释（脚本语言）。</p>
-<p>Python的解释器也会有编译器的部分功能，为了提高性能结合出来的新解释器。<br>1.2 Python语言概述</p>
-<p>Python由荷兰Guido van Rossum设计并领导开发，诞生于1991年，2.7版本终结Python2。</p>
-<p>2008年12月发布Python3.0，2016年Python2到Python3的标准库和第三方库更迭宣告结束。</p>
-<p>Python3中的输出函数print()替换了Python2中的print语句（支持中文）：</p>
-<pre><code>Python2：&gt;&gt;&gt;print &quot;yy&quot;
-Python3: &gt;&gt;&gt;print(&quot;yy&quot;)
-Python3: &gt;&gt;&gt;print(&quot;中文&quot;)
-</code></pre><p>1.3 Python开发环境配置</p>
-<p>建议使用Python3.5.3 32位版本解释器，推荐下载地址：<a href="https://python123.io/download" target="_blank" rel="noopener">https://python123.io/download</a><br><img src="image/p11.png"></p>
-<p>安装时记得勾选Add Python3.5 to PATH，然后点击Install Now确认安装</p>
-<p><img src="image/p12.png"><br>安装成功</p>
-<p><img src="image/p13.png"><br>Python解释器的两个重要工具：IDLE（集成开发环境，编写调试代码）、pip（第三方库安装工具）。</p>
-<p>Python文件保存扩展名一般为.py。</p>
-<p>IDLE快捷键：Ctrl+N（启动IDLE编辑器）、Ctrl+Q（退出IDLE Shell或编辑器）、Alt+3（注释选定区域文本）、Alt+4（解除注释选定区域文本）、Alt+Q（代码格式化）、F5（执行程序）。</p>
-<p>Python程序运行方式：交互式（IDLE 少量代码使用）、文件式（最常用）、cmd中使用python xxx.py命令运行、图形化操作系统中直接通过点击鼠标运行，前提都是建立在已经安装了Python解释器的操作系统。<br>1.4 程序的基本编写方法</p>
-<p>IPO：输入（input）、处理（process）、输出（output）。</p>
-<p>算法：计算问题的处理方法的统称，是程序最重要的组成部分，是一个程序的灵魂。<br>1.5 Python程序的特点</p>
-<p>通用性：数据分析、机器学习、人工智能、Web开发。</p>
-<p>语法简洁：精确表达问题逻辑，接近自然语言，只有33个保留字。</p>
-<p>生态高产：解释器提供几百个类和函数库，开源贡献十几万第三方函数库，缩短开发周期。</p>
-<p>（以上为三个重要特点，以下为具体特点）</p>
-<p>平台无关：可跨操作系统运行。</p>
-<p>强制可读：强制缩进，体现语句逻辑关系，提高可读性。</p>
-<p>支持中文：Python3采用Unicode编码。</p>
-<p>模式多样：面向过程、面向对象。</p>
-<p>类库便捷：pip命令安装类库、import保留字引入并使用类库中函数。</p>
-
-          
+          <p>由于我这段时间处于php的学习阶段，所以之前学的Python也忘了很多。<br>写这个blog，一方面是让自己对知识有一个更深的巩固，另一方面也是为了让后来参加Python考试的同学有参考资料。（大神勿喷）</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/01/26/全国计算机等级考试Python二级（一）/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1588,115 +939,17 @@ Python3: &gt;&gt;&gt;print(&quot;中文&quot;)
 
       
         
-          
-            <p>第2章 Python语言基本语法元素<br>&lt; !–more–&gt;<br>对于一些刚接触Python的新手可能会遇到安装失败的问题，这种开源的东西就需要我们以各种方式解决问题，搜了一下api-ms-win-crt-process- 1-1-0.dll丢失，<a href="https://blog.csdn.net/gangeqian2/article/details/79307416" target="_blank" rel="noopener">https://blog.csdn.net/gangeqian2/article/details/79307416</a> 。对于其他安装不上的原因可以自行google。<br>进入正题：<br>2.1 程序的格式框架</p>
-<p>缩进：Tab键或4个空格（建议）。用于表示程序间的包含和层次关系。例如if、while、for、def、class等保留字使用缩进。unexpected indent表示缩进错误。</p>
-<pre><code>d={}
-for c in(65,97):
-    for i in range(26):
-        d[chr(i+c)]=chr((i+13)%26+c)
-print(&quot;&quot;.join([d.get(c,c) for c in d]))
-</code></pre><p>注释：以#开头表示，多行注释每行前面都加#</p>
-<pre><code>#这是一个真理注释
-print(&quot;PHP是世界上最好的语言&quot;)
-</code></pre><p>2.2 语法元素的名称</p>
-<p>变量：保存和表示数据值，通过赋值（等号=）来修改，随时命名、随时赋值、随时使用。</p>
-<p>命名：给变量或其他程序元素关联名称或标识符的过程。可以采用大小写字母、数字、下划线、汉字及组合命名，长度没有限制。首字符不能是数字，标识符中间不能有空格、不能与保留字相同、大小写敏感，标点符号全部为英文标点。</p>
-<p>保留字：关键字，内部定义并保留使用的标识符，大小写敏感，Python3版本共33个保留字。</p>
-<pre><code>#Python3保留字
-and    as        assert  break   class  continue  def
-def    elif      else    except  False  finally   for
-from   global    if      import  in     is        lambda
-None   nonlocal  not     or      pass   raise     return
-True   try       while   with    yield
-</code></pre><p>2.3 数据类型</p>
-<p>数据类型：表示数据的含义，消除计算机对数据理解的二义性。Python有数字、字符串、元祖、集合、列表、字典类型等。</p>
-<p>数字类型：整数、浮点数、复数。整数有十进制、十六进制、八进制、二进制，可以直接比较。浮点数带有小数点，只有十进制，可以用科学计数法表示。</p>
-<p>字符串类型：字符序列，用双引号” “或单引号’ ‘包括起来（作用相同），可以对单个字符或字符片段进行索引。</p>
-<pre><code>&gt;&gt;&gt; &quot;PHP是世界上最好的语言&quot;[1]
-&apos;H&apos;
-
-&gt;&gt;&gt; &quot;PHP是世界上最好的语言&quot;[-3]
-&apos;的&apos;
-
-&gt;&gt;&gt; &quot;PHP是世界上最好的语言&quot;[0:3]
-&apos;PHP&apos;
-
-&gt;&gt;&gt; len(&quot;PHP是世界上最好的语言&quot;) #获取字符串长度
-12
-
-&gt;&gt;&gt; &quot;PHP是世界上最好的语言&quot;[7:-3]
-&apos;最好&apos;
-</code></pre><p>2.4 程序的语句元素</p>
-<p>表达式：产生或计算新数据值的代码片段，数据和操作符构成，运算结果的类型由操作符或运算符决定。</p>
-<p>赋值语句：使用等号（=）表示，变量=表达式。双等号（==）判断相等，True相等，False不相等。</p>
-<pre><code>&gt;&gt;&gt; a = 666  #赋值
-&gt;&gt;&gt; print(a)
-666
-
-&gt;&gt;&gt; a,b = 666,999   #同步赋值
-&gt;&gt;&gt; x,y = &apos;PHP&apos;,&apos;Python&apos;
-&gt;&gt;&gt; print(x)
-PHP
-&gt;&gt;&gt; print(a)
-666
-
-&gt;&gt;&gt; x,y = y,x  #同步赋值的应用 互换变量
-</code></pre><p>引用：(1)全面命名空间引用： import 功能库名称，调用：功能库名称.函数名称()</p>
-<pre><code>       (2)具体函数引用：from 功能库名称 import 函数名，调用：函数名称()
-
-       (3)全函数引用：from 功能库名称 import * ，调用：函数名称()
-
-       (4)别名引用：import 功能库名称 as 功能库别名，调用：功能库别名.函数名称()
-
-#引用turtle库画圆
-&gt;&gt;&gt; import turtle
-&gt;&gt;&gt; turtle.fd(-200)
-&gt;&gt;&gt; turtle.right(90)
-&gt;&gt;&gt; turtle.circle(200)
-</code></pre><p><img src="image/p21.png"></p>
-<p>2.5 基本输入输出函数</p>
-<p>input()：变量=input(“提示性文字”) ，返回字符串。</p>
-<pre><code>&gt;&gt;&gt; a = input(&quot;请输入一个小数:&quot;)
-请输入一个小数:6.66
-&gt;&gt;&gt; print(a)
-6.66
-</code></pre><p>eval()：变量=eval(“字符串”)，去掉字符串最外侧的引号，执行去掉引号后的字符内容。</p>
-<pre><code>&gt;&gt;&gt; a = eval(&quot;1.11 + 5.55&quot;)
-&gt;&gt;&gt; print(a)
-6.66
-
-#eval()结合input()使用 获取用户输入的数字
-&gt;&gt;&gt; a = eval(input(&quot;请输入一个数:&quot;))
-请输入一个数:333
-&gt;&gt;&gt; print(a*2)
-666
-</code></pre><p>print()：输出运算结果。</p>
-<pre><code>#第一种 输出字符串
-&gt;&gt;&gt; print(&quot;挺好&quot;)
-挺好
-
-#第二种 输出一个或多个变量
-&gt;&gt;&gt; a=666
-&gt;&gt;&gt; print(a,a,a)
-666 666 666
-
-#第三种 混合输出字符串与变量值
-#格式：print(&quot;字符串模板&quot;.format(变量1,2,3))  {}代表一个槽位，对应.format里的变量
-&gt;&gt;&gt; a,b=6,111
-&gt;&gt;&gt; print(&quot;数字{}和数字{}的乘积是{}&quot;.format(a,b,a*b))
-数字6和数字111的乘积是666
-
-
-&gt;&gt;&gt; a=666   #end参数避免默认换行
-&gt;&gt;&gt; print(a,end=&quot;.&quot;)
-666.
-</code></pre><p>结束^_^</p>
-
-          
+          <p>第2章 Python语言基本语法元素<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/01/26/全国计算机等级考试Python二级（二）/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
-    </div>
+    </p></div>
     
     
     
@@ -1813,250 +1066,17 @@ PHP
 
       
         
-          
-            <p>第3章 基本数据类型<br>&lt; !–more–&gt;<br>3.1 数字类型<br>数字类型：整数类型、浮点数类型、复数类型。</p>
-<p>整数类型：十进制、二进制、八进制和十六进制。table cellspacing=”0”&gt;<tbody><tr><td style="background-color:#d9d9d9;border-color:#000000 #000000 #000000;text-align:center;vertical-align:top;width:116pt;"><br>            <p style="margin-left:0in;"><span style="color:#000000;">进制种类</span></p><br>            </td><br>            <td style="background-color:#d9d9d9;border-color:#000000;text-align:center;vertical-align:top;width:104pt;"><br>            <p style="margin-left:0in;"><span style="color:#000000;">引导符号</span></p><br>            </td><br>            <td style="background-color:#d9d9d9;border-color:#000000 #000000 #000000;text-align:center;vertical-align:top;width:327pt;"><br>            <p style="margin-left:0in;"><span style="color:#000000;">描述</span></p><br>            </td><br>        </tr><tr><td style="border-color:#000000 #000000 #000000;text-align:center;vertical-align:top;width:116pt;"><br>            <p style="margin-left:0in;"><span style="color:#000000;">十进制</span></p><br>            </td><br>            <td style="border-color:#000000;text-align:center;vertical-align:top;width:104pt;"><br>            <p style="margin-left:0in;"><span style="color:#000000;">无</span></p><br>            </td><br>            <td style="border-color:#000000 #000000 #000000;text-align:justify;vertical-align:top;width:327pt;"><br>            <p style="margin-left:0in;"><span style="color:#000000;">默认情况，例：</span><span style="color:#000000;">1010,-1010</span></p><br>            </td><br>        </tr><tr><td style="border-color:#000000 #000000 #000000;text-align:center;vertical-align:top;width:116pt;"><br>            <p style="margin-left:0in;"><span style="color:#000000;">二进制</span></p><br>            </td><br>            <td style="border-color:#000000;text-align:center;vertical-align:top;width:104pt;"><br>            <p style="margin-left:0in;"><span style="color:#000000;">0b </span><span style="color:#000000;">或</span><span style="color:#000000;"> 0B</span></p><br>            </td><br>            <td style="border-color:#000000 #000000 #000000;text-align:justify;vertical-align:top;width:327pt;"><br>            <p style="margin-left:0in;"><span style="color:#000000;">由字符</span><span style="color:#000000;">0</span><span style="color:#000000;">和</span><span style="color:#000000;">1</span><span style="color:#000000;">组成，例：</span><span style="color:#000000;">0b1010</span><span style="color:#000000;">，</span><span style="color:#000000;">0B1010</span></p><br>            </td><br>        </tr><tr><td style="border-color:#000000 #000000 #000000;text-align:center;vertical-align:top;width:116pt;"><br>            <p style="margin-left:0in;"><span style="color:#000000;">八进制</span></p><br>            </td><br>            <td style="border-color:#000000;text-align:center;vertical-align:top;width:104pt;"><br>            <p style="margin-left:0in;"><span style="color:#000000;">0o </span><span style="color:#000000;">或</span><span style="color:#000000;"> 0O</span></p><br>            </td><br>            <td style="border-color:#000000 #000000 #000000;text-align:justify;vertical-align:top;width:327pt;"><br>            <p style="margin-left:0in;"><span style="color:#000000;">由字符</span><span style="color:#000000;">0</span><span style="color:#000000;">到</span><span style="color:#000000;">7</span><span style="color:#000000;">组成，例：</span><span style="color:#000000;">0o1010</span><span style="color:#000000;">，</span><span style="color:#000000;">0O1010</span></p><br>            </td><br>        </tr><tr><td style="border-color:#000000 #000000 #000000;text-align:center;vertical-align:top;width:116pt;"><br>            <p style="margin-left:0in;"><span style="color:#000000;">十六进制</span></p><br>            </td><br>            <td style="border-color:#000000;text-align:center;vertical-align:top;width:104pt;"><br>            <p style="margin-left:0in;"><span style="color:#000000;">0x </span><span style="color:#000000;">或</span><span style="color:#000000;"> 0X</span></p><br>            </td><br>            <td style="border-color:#000000 #000000 #000000;text-align:justify;vertical-align:top;width:327pt;"><br>            <p style="margin-left:0in;"><span style="color:#000000;">由字符</span><span style="color:#000000;">0</span><span style="color:#000000;">到</span><span style="color:#000000;">9</span><span style="color:#000000;">、</span><span style="color:#000000;">a</span><span style="color:#000000;">到</span><span style="color:#000000;">f</span><span style="color:#000000;">或</span><span style="color:#000000;">A</span><span style="color:#000000;">到</span><span style="color:#000000;">F</span><span style="color:#000000;">组成，例：</span><span style="color:#000000;">0x1010</span></p><br>            </td><br>        </tr></tbody><pre class="has"></pre></p>
-<p>/#不同进制的整数之间可以直接运算</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>0x3F2/1010<br>1.0<br>(0x3F2+1010)/0o1762<br>2.0<br>浮点数类型：必须带有小数部分，小数部分可以是0，例如1010.0。表示方法有一般表示（只有十进制）和科学计数法。数值范围和小数精度受不同计算机系统的限制，一般认为没有范围限制。有不确定尾数。</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<p>/#科学计数法 格式：<a>e<b> = a*10的b次方 （或E）</b></a></p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>print(1.01e3)<br>1010.0<br>print(-1.01E-3)<br>-0.00101<br>/#浮点数不确定尾数<br>0.1 + 0.2<br>0.30000000000000004<br>0.1 + 0.2 == 0.3<br>False</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<p>#使用round()函数四舍五入 限定保留尾数 去掉不确定尾数</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>round(0.1 + 0.2,3) == 0.3<br>True<br>复数类型：含有虚数单位（j）的数。可以看作是二元有序实数对（a, b），表示为：a + bj，a是实数部分，简称实部，b是虚数部分，简称虚部。当b为1时，1不能省略，1j表示复数，j表示Python程序中的一个变量。</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<p>#获得实数部分</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>(1.23e4+5.64e4j).real<br>12300.0</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<p>#获得虚数部分</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>(1.23e4+5.64e4j).imag<br>56400.0</p>
-</blockquote>
-<p>3.2 数字类型的运算<br>9个基本的数值运算操作符：<table cellspacing="0" style="width:505pt;"><tbody><tr><td style="background-color:#d9d9d9;border-color:#000000 #000000 #000000;text-align:center;vertical-align:top;width:126pt;"><br>            <p style="margin-left:0in;"><span style="color:#000000;">操作符</span></p><br>            </td><br>            <td style="background-color:#d9d9d9;border-color:#000000 #000000 #000000;text-align:center;vertical-align:top;width:378pt;"><br>            <p style="margin-left:0in;"><span style="color:#000000;">描述</span></p><br>            </td><br>        </tr><tr><td style="border-color:#000000 #000000 #000000;text-align:center;vertical-align:top;width:126pt;"><br>            <p style="margin-left:0in;"><span style="color:#000000;">x + y</span></p><br>            </td><br>            <td style="border-color:#000000 #000000 #000000;vertical-align:top;width:378pt;"><br>            <p style="margin-left:0in;"><span style="color:#000000;">x</span><span style="color:#000000;">与</span><span style="color:#000000;">y</span><span style="color:#000000;">之和</span></p><br>            </td><br>        </tr><tr><td style="border-color:#000000 #000000 #000000;text-align:center;vertical-align:top;width:126pt;"><br>            <p style="margin-left:0in;"><span style="color:#000000;">x - y</span></p><br>            </td><br>            <td style="border-color:#000000 #000000 #000000;vertical-align:top;width:378pt;"><br>            <p style="margin-left:0in;"><span style="color:#000000;">x</span><span style="color:#000000;">与</span><span style="color:#000000;">y</span><span style="color:#000000;">之差</span></p><br>            </td><br>        </tr><tr><td style="border-color:#000000 #000000 #000000;text-align:center;vertical-align:top;width:126pt;"><br>            <p style="margin-left:0in;"><span style="color:#000000;">x <em> y</em></span></p><br>            </td><br>            <td style="border-color:#000000 #000000 #000000;vertical-align:top;width:378pt;"><br>            <p style="margin-left:0in;"><span style="color:#000000;">x</span><span style="color:#000000;">与</span><span style="color:#000000;">y</span><span style="color:#000000;">之积</span></p><br>            </td><br>        </tr><tr><td style="border-color:#000000 #000000 #000000;text-align:center;vertical-align:top;width:126pt;"><br>            <p style="margin-left:0in;"><span style="color:#000000;">x / y</span></p><br>            </td><br>            <td style="border-color:#000000 #000000 #000000;text-align:justify;vertical-align:top;width:378pt;"><br>            <p style="margin-left:0in;"><span style="color:#000000;">x</span><span style="color:#000000;">与</span><span style="color:#000000;">y</span><span style="color:#000000;">之商</span></p><br>            </td><br>        </tr><tr><td style="border-color:#000000 #000000 #000000;text-align:center;vertical-align:top;width:126pt;"><br>            <p style="margin-left:0in;"><span style="color:#000000;">x // y</span></p><br>            </td><br>            <td style="border-color:#000000 #000000 #000000;text-align:justify;vertical-align:top;width:378pt;"><br>            <p style="margin-left:0in;"><span style="color:#000000;">x</span><span style="color:#000000;">与</span><span style="color:#000000;">y</span><span style="color:#000000;">之整数商，即：不大于</span><span style="color:#000000;">x</span><span style="color:#000000;">与</span><span style="color:#000000;">y</span><span style="color:#000000;">之商的最大整数</span></p><br>            </td><br>        </tr><tr><td style="border-color:#000000 #000000 #000000;text-align:center;vertical-align:top;width:126pt;"><br>            <p style="margin-left:0in;"><span style="color:#000000;">x % y</span></p><br>            </td><br>            <td style="border-color:#000000 #000000 #000000;text-align:justify;vertical-align:top;width:378pt;"><br>            <p style="margin-left:0in;"><span style="color:#000000;">x</span><span style="color:#000000;">与</span><span style="color:#000000;">y</span><span style="color:#000000;">之商的余数，也称为模运算</span></p><br>            </td><br>        </tr><tr><td style="border-color:#000000 #000000 #000000;text-align:center;vertical-align:top;width:126pt;"><br>            <p style="margin-left:0in;"><span style="color:#000000;">-x</span></p><br>            </td><br>            <td style="border-color:#000000 #000000 #000000;text-align:justify;vertical-align:top;width:378pt;"><br>            <p style="margin-left:0in;"><span style="color:#000000;">x</span><span style="color:#000000;">的负值，即：</span><span style="color:#000000;">x(-1)</span></p><br>            </td><br>        </tr><tr><td style="border-color:#000000 #000000 #000000;text-align:center;vertical-align:top;width:126pt;"><br>            <p style="margin-left:0in;"><span style="color:#000000;">+x</span></p><br>            </td><br>            <td style="border-color:#000000 #000000 #000000;text-align:justify;vertical-align:top;width:378pt;"><br>            <p style="margin-left:0in;"><span style="color:#000000;">x</span><span style="color:#000000;">本身</span></p><br>            </td><br>        </tr><tr><td style="border-color:#000000 #000000 #000000;text-align:center;vertical-align:top;width:126pt;"><br>            <p style="margin-left:0in;"><span style="color:#000000;">x**y</span></p><br>            </td><br>            <td style="border-color:#000000 #000000 #000000;text-align:justify;vertical-align:top;width:378pt;"><br>            <p style="margin-left:0in;"><span style="color:#000000;">x</span><span style="color:#000000;">的</span><span style="color:#000000;">y</span><span style="color:#000000;">次幂</span></p><br>            </td><br>        </tr></tbody></table><pre class="has"></pre></p>
-<blockquote>
-<p>2+5<br>7<br>2-5<br>-3<br>2<em>5<br>10<br>2/5<br>0.4<br>2//5<br>0<br>2%5<br>2<br>5%2<br>1<br>-5<br>-5<br>+5<br>5<br>2**5<br>32<br> 整数和浮点数运算结果为浮点数，整数/整数结果为浮点数，整数或浮点数与复数运算结果为复数。<br>增强赋值操作符：+=、-=、</em>=、/=、//=、%=、<strong>=<br>x=3<br>x</strong>=3    #等价于x = x**3<br>print(x)<br>27<br>数值运算函数：</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<p>#绝对值</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>abs(-666)<br>666</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<p>#返回二元组（x//y,x%y），即（整数商,除法余数）</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>divmod(10,3)<br>(3, 1)</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<p>#x的y次幂，即x**y</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>pow(3,3)<br>27</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<p>#x的y次幂%z （模运算与幂运算同时进行 速度更快）</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>pow(55,1999999,10000)<br>4375</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<p>#四舍五入</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>round(6.6)<br>7</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<p>#保留小数尾数四舍五入</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>round(3.1415926,3)<br>3.142</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<p>#取最大值</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>max(1,2,3,4,5,0.1)<br>5</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<p>#取最小值</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>min(1,2,3,4,5,0.1)<br>0.1<br> 3.3 字符串类型及格式化<br>单行字符串可以由一对单引号（’）或双引号（”）作为边界来表示，单引号和双引号作用相同<br>多行字符串可以由一对三单引号（’’’）或三双引号（”””）作为边界来表示，两者作用相同。<br>print(‘这是”单行字符串”‘)<br>这是”单行字符串”<br>print(“这是’单行字符串’”)<br>这是’单行字符串’<br>print(“””这是’多行字符串’的第一行<br>这是’多行字符串’的第二行<br>“””)<br>这是’多行字符串’的第一行<br>这是’多行字符串’的第二行<br>print(‘’’这是”多行字符串”的第一行<br>这是”多行字符串”的第二行<br>‘’’)<br>这是”多行字符串”的第一行<br>这是”多行字符串”的第二行<br>语言转义符： \ 。例如：\n表示换行、\表示反斜杠、\’表示单引号、\”表示双引号、\t表示制表符（TAB）等。<br>print(“既需要’单引号’又需要\”双引号\””)<br>既需要’单引号’又需要”双引号”<br> 字符串的索引：<br>“青青子衿,悠悠我心。”[-5]<br>‘悠’<br>s = “青青子衿,悠悠我心。”<br>s[5]<br>‘悠’<br>字符串的切片：<br>“青青子衿,悠悠我心。”[8:4]<br>‘’<br>“青青子衿,悠悠我心。”[:4]<br>‘青青子衿’<br>“青青子衿,悠悠我心。”[5:]<br>‘悠悠我心。’<br>print(“青青子衿,悠悠我心。”[5:])<br>悠悠我心。<br>format()方法使用：”包含{ }的字符串模板”.format(逗号分隔的参数1,2,3…)   参数从0开始编号，{ }代表槽<br>“{}曰：学而时习之，不亦{}。”.format(“孔子”,”说乎”)<br>‘孔子曰：学而时习之，不亦说乎。<br>“{1}曰：学而时习之，不亦{0}。”.format(“说乎”,”孔子”)<br>‘孔子曰：学而时习之，不亦说乎。’<br>format()方法中模板字符串的槽除了包括参数序号，还可以包括格式控制信息。{&lt;参数序号&gt;: &lt;格式控制标记&gt;}<br>s = “等级考试”<br>“{:25}”.format(s)            #左对齐，默认<br>‘等级考试<br>                     ‘<br>“{:^25}”.format(s)          #居中对齐<br>‘          等级考试           ‘<br>“{:&gt;25}”.format(s)          #右对齐<br>‘                     等级考试’<br>“{:<em>^25}”.format(s)         #居中对齐且填充</em>号<br>‘<strong><strong>**</strong></strong>等级考试<strong><strong>***</strong></strong>‘<br>“{:+^25}”.format(s)         #居中对齐且填充+号<br>‘++++++++++等级考试+++++++++++’<br>“{:十^25}”.format(s)        #居中对齐且填充汉字“十”<br>‘十十十十十十十十十十等级考试十十十十十十十十十十十’<br>“{:^1}”.format(s)           #z指定宽度为1，不足变量s的宽度<br>‘等级考试’<br>“{:.2f}”.format(12345.67890)<br>‘12345.68’<br>“{:&gt;25.3f}”.format(12345.67890)<br>‘                12345.679’<br>“{:.5}”.format(“全国计算机等级考试”)<br>‘全国计算机’<br>“{:b},{:c},{:d},{:o},{:x},{:X}”.format(425)<br>‘110101001,Ʃ,425,651,1a9,1A9’<br>“{:e},{:E},{:f},{:%}”.format(3.14)<br>‘3.140000e+00,3.140000E+00,3.140000,314.000000%’<br>“{:.2e},{:.2E},{:.2f},{:.2%}”.format(3.14) # 对比输出<br>‘3.14e+00,3.14E+00,3.14,314.00%’</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<p>#常用的format()方法格式控制信息</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>“{:.2f}”.format(3.1415926)   # 输出小数点后两位<br>‘3.14’<br>“{:x}”.format(1010)           # 输出整数的十六机制形式<br>‘3f2’<br>“{:.5}”.format(“这是一个很长的字符串”)  # 输出字符串的前5位<br>‘这是一个很’<br>“{:-^10}”.format(“PYTHON”)   # 居中并填充<br>‘–PYTHON–’<br> 3.4 字符串类型的操作<br>字符串操作符：</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<p>#连接两个字符串x与y</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>“PHP” + “是世界上最好的语言”<br>‘PHP是世界上最好的语言’</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<p>#复制n次字符串x</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>“lws”*3<br>‘lwslwslws’</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<p>#如果x是s的子串，返回True，否则返回False</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>name = “lws”<br>l in name<br>“l” in name<br>True<br>字符串处理函数：</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<p>#返回字符串x的长度</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>len(“lws”)<br>3</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<p>#返回任意类型x所对应的字符串形式</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>str(0x3f)<br>‘63’</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<p>#返回Unicode编码x对应的单字符</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>chr(10000)<br>‘✐’</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<p>#返回单字符x表示的Unicode编码</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>ord(“和”)<br>21644</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<p>#返回整数x对应十六进制数的小写形式字符串</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>hex(1010)<br>‘0x3f2’</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<p>#返回整数x对应八进制数的小写形式字符串</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>oct(-255)<br>‘-0o377’<br>字符串处理方法：采用<a>.func(x)形式调用。方法仅作用于前导对象<a><br>方法<br>描述<br>str.lower()<br>返回字符串str的副本，全部字符小写<br>str.upper()<br>返回字符串str的副本，全部字符大写<br>str.split(sep=None)<br>返回一个列表，由str根据sep被分割的部分构成<br>str.count(sub)<br>返回sub子串出现的次数<br>str.replace(old, new)<br>返回字符串str的副本，所有old子串被替换为new<br>str.center(width, fillchar)<br>字符串居中函数，fillchar参数可选<br>str.strip(chars)<br>从字符串str中去掉在其左侧和右侧chars中列出的字符<br>str.join(iter)<br>将iter变量的每一个元素后增加一个str字符串</a></a></p>
-</blockquote>
-</blockquote>
-</blockquote>
-<p>#str.split(sep) 能够根据sep分隔字符串str，分割后的内容以列表类型返回。</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>“Python is an excellent language.”.split()<br>[‘Python’, ‘is’, ‘an’, ‘excellent’, ‘language.’]<br>“Python is an excellent language.”.split(‘a’)<br>[‘Python is ‘, ‘n excellent l’, ‘ngu’, ‘ge.’]</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<p>#str.count(sub)方法返回字符串str中出现sub的次数，sub是一个字符串。</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>“Python is an excellent language.”.count(‘a’)<br>3</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<p>#str.replace(old, new)方法将字符串str中出现的old字符串替换为new字符串，old和new的长度可以不同。</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>“Python is an excellent language.”.replace(‘a’, ‘#’)<br>‘Python is #n excellent l#ngu#ge.’<br>“Python is an excellent language.”.replace(‘Python’, ‘C’)<br>‘C is an excellent language.’<br>str.center(width, fillchar)方法返回长度为width的字符串，其中，str处于新字符串中心位置，两侧新增字符采用fillchar填充，当width小于字符串长度时，返回str。其中，fillchar是单个字符。<br>“Python”.center(20, “=”)<br>‘=======Python=======’<br>“Python”.center(2, “=”)<br>‘Python’<br>3.5 类型判断和类型间转换<br>Python语言提供type(x)函数对变量x进行类型判断，适用于任何数据类型。<br>n = eval(input(‘请输入一个数字:’))<br>if type(n) == type(123):<br>print(“输入的数字是整数。”)<br>elif type(n) == type(11.3):<br>print(“输入的数字是浮点数。”)<br>else:<br>print(“无法判断输入类型。”)<br>通过内置的数字类型转换函数转换：</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<p>#浮点数或字符串转换为整数</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>int(10.01)<br>10</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<p>#整数或字符串转换为浮点数</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>float(10)<br>10.0</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<p>#整数或浮点数转换为字符串</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>str(10.0)<br>‘10.0’<br>第三章结束，</p>
-</blockquote>
-</blockquote>
-</blockquote>
-
-          
+          <p>第3章 基本数据类型<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/01/26/全国计算机等级考试Python二级（三）/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
-    </div>
+    </p></div>
     
     
     
@@ -2173,13 +1193,17 @@ PHP
 
       
         
-          
-            <p>谨以此，敬知识！<br>&lt; !–more–&gt;<br>/<em>经过了一下午的折腾，yy终于开始写自己的第一篇bolg了（开心又激动的老泪奔涌而出）。<br>身为一个大一的学生，由于高考之前无时间编码，所以仔细算一下，yy的编程生涯迄今为止也只有4个月而已。当然知识的储备也不会像那些大牛一样丰厚。那么yy为什么要写bolg呐？装必当然是首要原因，其次我也想分享yy学过的知识，并记录下yy的整个编程生涯。所以，路过的朋友可以把yy的bolg当成一个资源库（yy相信，有一天yy的知识储备会像python第三方库那么多），也可以当成一个指引自己编程生涯的路灯。<br>2018年6月份计算机二级报名时，由于yy正处于高考备战状态，所以没有报名。11月份的这次当然报名啦~。看了一下计算机二级考试的科目，恩~有python，毕竟yy是python入门的编码，那就来个python计算机二级考试尝尝鲜吧。去网上搜了一下，原来python也是近几年才纳入计算机二级科目，所以这方面的资料并不会很多，于是便打开csdn，找到一个大牛的计算机二级python备考经验，附连接：‘<a href="https://blog.csdn.net/msllws/article/details/81276483" target="_blank" rel="noopener">https://blog.csdn.net/msllws/article/details/81276483</a> ’，又从python123网站上阅读了计算机二级python考纲和python基础知识，yy的python基础知识当然是可以过关，就当是复习了一下python吧。这里yy为备考python的小py准备了yy自己的手写笔记还有yy二级考试经历（内容持续更新）：html。<br>会想起前几个月学习python，仿佛就是前几个月时发生的事情，yy每天看各种网上的公开课，一顿照抄代码。随便买来一本python歪果大佬写的书，一言不合就是看上100页。经过这段猛如虎的操作后，yy的技术并没有得到提升，甚至想放弃。于是开始思考学习方法，总结出下面的编程学习方法：html（不一定适用于所有人，内容持续更新）。待到学习方法有了靴维矫正后，发现自己的学习能力还是可以的。<br>下面说说yy在这四个月里研究了什么吧。<br>由于大一时期各大院校会组织各种app刷网课，yy刷网课还是有耐心的，但是，yy看不下去周围可爱的同学遭受刷网课这般痛苦的折磨，便决定用python给py交易掉。虽然yy只是入门级别，但是这个问题的思路还是有的。首先想到修改app端服务器数据库里的内容，但是需要学习的东西太多，yy果断放弃。其次想到的就是浏览器伪造，恩，这个可以有，于是yy开始了python爬虫跳坑之旅：html。yy经过了这次系统的学习后终于能实现这个问题了：html。<br>yy刚学完爬虫还是很有成就感的（暗笑），学习爬虫的过程中也把html，css，js一起系统的学习了一下，由于这些知识过于基础，我就不写我的具体学习过程了。以至于yy为什么学习宽带这么大呐？是因为yy曾经想的是面向就业岗位编程，毕竟拍黄片（php）好找工作。但是yy这几天有仔细的想了一下，要有自己的理想，不想让工作只是编码这么简单。yy最近对编程的热度也是很大，想把所有的热门编程语言都学一遍。但是马上要期末考试了，yy要备考了，所以编程要放一放了。（你可能会问为什么不把教务处系统黑了？这样不就有考试答案了吗？恩，早晚会的，毕竟每个成功的黑客背后都会有一个失败的教务处系统）。<br>差不多了，这就是大一前四个月学到的东西，加油！kk<br>/</em></p>
-
-          
+          <p>谨以此，敬知识！<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/01/04/我的第一篇bolg/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
-    </div>
+    </p></div>
     
     
     
