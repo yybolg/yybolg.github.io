@@ -79,17 +79,25 @@
 
 
 
-<meta name="description" content="To knowledge!!!">
+<meta name="description" content="第7章 文件和数据格式化7.1 文件的使用文件：数据的集合和抽象，存储在辅助存储器上的一组数据序列，可以包含任何数据内容。 文件类型：文本文件（由单一特定编码的字符组成）、二进制文件（比特0和比特1组成）。 文件的打开和关闭： 使用open()函数打开文件，返回一个操作这个文件的变量，&amp;lt;变量名&amp;gt; = open(&amp;lt;文件路径及文件名&amp;gt;, &amp;lt;打开模式&amp;gt;)  使用clo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="全国计算机等级考试Python二级（七）">
 <meta property="og:url" content="https://yy.github.io/2019/01/26/全国计算机等级考试Python二级（七）/index.html">
 <meta property="og:site_name" content="yybolg">
-<meta property="og:description" content="To knowledge!!!">
+<meta property="og:description" content="第7章 文件和数据格式化7.1 文件的使用文件：数据的集合和抽象，存储在辅助存储器上的一组数据序列，可以包含任何数据内容。 文件类型：文本文件（由单一特定编码的字符组成）、二进制文件（比特0和比特1组成）。 文件的打开和关闭： 使用open()函数打开文件，返回一个操作这个文件的变量，&amp;lt;变量名&amp;gt; = open(&amp;lt;文件路径及文件名&amp;gt;, &amp;lt;打开模式&amp;gt;)  使用clo">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-01-26T08:59:53.558Z">
+<meta property="og:image" content="https://yy.github.io/2019/01/26/全国计算机等级考试Python二级（七）/image/p71.png">
+<meta property="og:image" content="https://yy.github.io/2019/01/26/全国计算机等级考试Python二级（七）/image/p72.png">
+<meta property="og:image" content="https://yy.github.io/2019/01/26/全国计算机等级考试Python二级（七）/image/p73.png">
+<meta property="og:image" content="https://yy.github.io/2019/01/26/全国计算机等级考试Python二级（七）/image/p74.png">
+<meta property="og:image" content="https://yy.github.io/2019/01/26/全国计算机等级考试Python二级（七）/image/p75.png">
+<meta property="og:image" content="https://yy.github.io/2019/01/26/全国计算机等级考试Python二级（七）/image/p76.png">
+<meta property="og:image" content="https://yy.github.io/2019/01/26/全国计算机等级考试Python二级（七）/image/p77.png">
+<meta property="og:updated_time" content="2019-01-26T13:47:16.582Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="全国计算机等级考试Python二级（七）">
-<meta name="twitter:description" content="To knowledge!!!">
+<meta name="twitter:description" content="第7章 文件和数据格式化7.1 文件的使用文件：数据的集合和抽象，存储在辅助存储器上的一组数据序列，可以包含任何数据内容。 文件类型：文本文件（由单一特定编码的字符组成）、二进制文件（比特0和比特1组成）。 文件的打开和关闭： 使用open()函数打开文件，返回一个操作这个文件的变量，&amp;lt;变量名&amp;gt; = open(&amp;lt;文件路径及文件名&amp;gt;, &amp;lt;打开模式&amp;gt;)  使用clo">
+<meta name="twitter:image" content="https://yy.github.io/2019/01/26/全国计算机等级考试Python二级（七）/image/p71.png">
 
 
 
@@ -299,7 +307,109 @@
       
 
       
-        
+        <p>第7章 文件和数据格式化<br>7.1 文件的使用<br>文件：数据的集合和抽象，存储在辅助存储器上的一组数据序列，可以包含任何数据内容。</p>
+<p>文件类型：文本文件（由单一特定编码的字符组成）、二进制文件（比特0和比特1组成）。</p>
+<p>文件的打开和关闭：</p>
+<pre><code>使用open()函数打开文件，返回一个操作这个文件的变量，&lt;变量名&gt; = open(&lt;文件路径及文件名&gt;, &lt;打开模式&gt;)
+
+使用close()方法关闭文件，释放文件的使用授权，&lt;变量名&gt;.close()
+</code></pre><p><img src="image/p71.png"></p>
+<p>/#文本文件方式<br>f = open(“a.txt”,”rt”)<br>print(f.readline())<br>f.close()</p>
+<blockquote>
+<blockquote>
+<blockquote>
+</blockquote>
+<p>全国计算机等级考试</p>
+</blockquote>
+</blockquote>
+<p>/#二进制方式<br>f = open(“a.txt”,”rb”)<br>print(f.readline())<br>f.close()</p>
+<blockquote>
+<blockquote>
+<blockquote>
+</blockquote>
+<p>b’\xc8\xab\xb9\xfa\xbc\xc6\xcb\xe3\xbb\xfa\xb5\xc8\xbc\xb6\xbf\xbc\xca\xd4’</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>PATH = “D:\“<br>f = open(PATH + “a.txt”, “rt”)<br>print(f.readline())<br>国家计算机等级考试<br>f.close()<br>print(f.readline())<br>Traceback (most recent call last):<br>  File “&lt;pyshell#81&gt;”, line 1, in <module><br>    print(f.readline())<br>ValueError: I/O operation on closed file.<br> 文件的读写：</module></p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p><img src="image/p72.png"></p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>f = open(“D://b.txt”, “r”)<br>s = f.read()    #适用于文件不大 结果是一个字符串<br>print(s)<br>新年都未有芳华，二月初惊见草芽。<br>白雪却嫌春色晚，故穿庭树作飞花。<br>f.close()</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>f = open(“D://b.txt”, “r”)<br>ls = f.readlines()    #结果是一个列表<br>print(ls)<br>[‘新年都未有芳华，二月初惊见草芽。\n’, ‘白雪却嫌春色晚，故穿庭树作飞花。\n’]<br>f.close()</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>f = open(“D://b.txt”, “r”)<br>s = f.read()<br>print(s)<br>新年都未有芳华，二月初惊见草芽。<br>白雪却嫌春色晚，故穿庭树作飞花。<br>f.seek(0)  # 将读取指针重置到文件开头，否则再次读取为空[]<br>ls = f.readlines()<br>print(ls)<br>[‘新年都未有芳华，二月初惊见草芽。\n’, ‘白雪却嫌春色晚，故穿庭树作飞花。\n’]<br>f.close()</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>/#遍历循环逐行遍历文件<br>f = open(“D://b.txt”, “r”)<br>for line in f:<br>print(line)<br>f.close()</p>
+<blockquote>
+<blockquote>
+</blockquote>
+<p>新年都未有芳华，二月初惊见草芽。</p>
+</blockquote>
+<p>白雪却嫌春色晚，故穿庭树作飞花。</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>f = open(“D://c.txt”, “w”)<br>f.write(‘新年都未有芳华\n’)<br>f.write(‘二月初惊见草芽\n’)<br>f.write(‘白雪却嫌春色晚\n’)<br>f.write(‘故穿庭树作飞花\n’)<br>f.close()</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>ls = [‘新年都未有芳华\n’, ‘二月初惊见草芽\n’,’白雪却嫌春色晚\n’,’故穿庭树作飞花\n’]<br>f = open(“D://c.txt”, “w”)<br>f.writelines(ls)<br>f.close()<br>7.2 数据组织的维度<br>数据组织：一维数据、二维数据和高维数据。</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>一维数据：由对等关系的有序或无序数据构成，采用线性方式组织。例如：北京、上海、天津、重庆。</p>
+<p>二维数据：也称表格数据，由关联关系数据构成，采用二维表格方式组织。例如：国家统计局发布的居民消费价格指数。</p>
+<p><img src="image/p73.png"></p>
+<p>高维数据：由键值对类型的数据构成，采用对象方式组织，可以多层嵌套。衍生出HTML、XML、JSON等具体数据组织的语法结构。</p>
+<p><img src="image/p74.png"></p>
+<p>7.3 一维数据的处理<br>一维数据的表示：</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>ls = [‘北京’, ‘上海’, ‘天津’, ‘重庆’]<br>print(ls)<br>[‘北京’, ‘上海’, ‘天津’, ‘重庆’]<br>一维数据的存储：空格分隔、逗号分隔（CSV存储格式）、换行分隔、其他特殊符号分隔（例如分号）。</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>列表对象输出为CSV格式文件：</p>
+<p>ls = [‘北京’, ‘上海’, ‘天津’, ‘重庆’]<br>f = open(“city.csv”, “w”)<br>f.write(“,”.join(ls)+ “\n”)<br>f.close()<br>北京,上海,天津,重庆<br>一维数据的处理：从CSV文件读入一维数据，将其表示为列表对象 </p>
+<p>f = open(“city.csv”, “r”)<br>ls = f.read().strip(‘\n’).split(“,”)<br>f.close()<br>print(ls)</p>
+<blockquote>
+<blockquote>
+<blockquote>
+</blockquote>
+<p>[‘北京’, ‘上海’, ‘天津’, ‘重庆’]<br>7.4 二维数据的处理<br>二维数据的表示：</p>
+</blockquote>
+</blockquote>
+<p><img src="image/p75.png"></p>
+<p>二维数据的存储：由一维数据组成，用CSV格式文件存储。每一行是一维数据，整个CSV文件是一个二维数据</p>
+<p>/# ls代表二维列表，此处省略<br>f = open(“cpi.csv”, “w”)<br>for row in ls:<br>    f.write(“,”.join(row)+ “\n”)<br>f.close()<br>二维数据的处理：从CSV文件读入二维数据，并将其表示为二维列表对象</p>
+<p>f = open(“cpi.csv”, “r”)<br>ls = []<br>for line in f:<br>    ls.append(line.strip(‘\n’).split(“,”))<br>f.close()<br>print(ls)<br><img src="image/p76.png"></p>
+<p>二维列表一般需要借助循环遍历实现对每个数据的处理：</p>
+<p>/#对二维数据进行格式化输出，打印成表格形状<br>for row in ls:<br>     line = “”<br>     for item in row:<br>          line += “{:10}\t”.format(item)<br>     print(line)<br><img src="image/p77.png"></p>
+
       
     </div>
     
