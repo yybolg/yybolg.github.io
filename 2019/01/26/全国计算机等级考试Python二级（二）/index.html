@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="对于一些新手可能会遇到安装失败的问题，这种开源的东西就需要我们以各种方式解决问题，搜了一下api-ms-win-crt-process- 1-1-0.dll丢失，https://blog.csdn.net/gangeqian2/article/details/79307416 。对于其他安装不上的原因可以自行google。进入正题： 第2章 Python语言基本语法元素2.1 程序的格式框架 缩进">
+<meta property="og:type" content="article">
+<meta property="og:title" content="全国计算机等级考试Python二级（二）">
+<meta property="og:url" content="https://yy.github.io/2019/01/26/全国计算机等级考试Python二级（二）/index.html">
+<meta property="og:site_name" content="yybolg">
+<meta property="og:description" content="对于一些新手可能会遇到安装失败的问题，这种开源的东西就需要我们以各种方式解决问题，搜了一下api-ms-win-crt-process- 1-1-0.dll丢失，https://blog.csdn.net/gangeqian2/article/details/79307416 。对于其他安装不上的原因可以自行google。进入正题： 第2章 Python语言基本语法元素2.1 程序的格式框架 缩进">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://yy.github.io/2019/01/26/全国计算机等级考试Python二级（二）/image/p21.png">
+<meta property="og:updated_time" content="2019-01-26T09:06:02.700Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="全国计算机等级考试Python二级（二）">
+<meta name="twitter:description" content="对于一些新手可能会遇到安装失败的问题，这种开源的东西就需要我们以各种方式解决问题，搜了一下api-ms-win-crt-process- 1-1-0.dll丢失，https://blog.csdn.net/gangeqian2/article/details/79307416 。对于其他安装不上的原因可以自行google。进入正题： 第2章 Python语言基本语法元素2.1 程序的格式框架 缩进">
+<meta name="twitter:image" content="https://yy.github.io/2019/01/26/全国计算机等级考试Python二级（二）/image/p21.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://yy.github.io/2019/01/26/全国计算机等级考试Python二级（二）/">
+
+
+
+
+
+  <title>全国计算机等级考试Python二级（二） | yybolg</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">yybolg</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">yybolg</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://yy.github.io/2019/01/26/全国计算机等级考试Python二级（二）/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="yy">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="yybolg">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">全国计算机等级考试Python二级（二）</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-26T16:50:26+08:00">
+                2019-01-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>对于一些新手可能会遇到安装失败的问题，这种开源的东西就需要我们以各种方式解决问题，搜了一下api-ms-win-crt-process- 1-1-0.dll丢失，<a href="https://blog.csdn.net/gangeqian2/article/details/79307416" target="_blank" rel="noopener">https://blog.csdn.net/gangeqian2/article/details/79307416</a> 。对于其他安装不上的原因可以自行google。<br>进入正题：</p>
+<p>第2章 Python语言基本语法元素<br>2.1 程序的格式框架</p>
+<p>缩进：Tab键或4个空格（建议）。用于表示程序间的包含和层次关系。例如if、while、for、def、class等保留字使用缩进。unexpected indent表示缩进错误。</p>
+<pre><code>d={}
+for c in(65,97):
+    for i in range(26):
+        d[chr(i+c)]=chr((i+13)%26+c)
+print(&quot;&quot;.join([d.get(c,c) for c in d]))
+</code></pre><p>注释：以#开头表示，多行注释每行前面都加#</p>
+<pre><code>#这是一个真理注释
+print(&quot;PHP是世界上最好的语言&quot;)
+</code></pre><p>2.2 语法元素的名称</p>
+<p>变量：保存和表示数据值，通过赋值（等号=）来修改，随时命名、随时赋值、随时使用。</p>
+<p>命名：给变量或其他程序元素关联名称或标识符的过程。可以采用大小写字母、数字、下划线、汉字及组合命名，长度没有限制。首字符不能是数字，标识符中间不能有空格、不能与保留字相同、大小写敏感，标点符号全部为英文标点。</p>
+<p>保留字：关键字，内部定义并保留使用的标识符，大小写敏感，Python3版本共33个保留字。</p>
+<pre><code>#Python3保留字
+and    as        assert  break   class  continue  def
+def    elif      else    except  False  finally   for
+from   global    if      import  in     is        lambda
+None   nonlocal  not     or      pass   raise     return
+True   try       while   with    yield
+</code></pre><p>2.3 数据类型</p>
+<p>数据类型：表示数据的含义，消除计算机对数据理解的二义性。Python有数字、字符串、元祖、集合、列表、字典类型等。</p>
+<p>数字类型：整数、浮点数、复数。整数有十进制、十六进制、八进制、二进制，可以直接比较。浮点数带有小数点，只有十进制，可以用科学计数法表示。</p>
+<p>字符串类型：字符序列，用双引号” “或单引号’ ‘包括起来（作用相同），可以对单个字符或字符片段进行索引。</p>
+<pre><code>&gt;&gt;&gt; &quot;PHP是世界上最好的语言&quot;[1]
+&apos;H&apos;
+
+&gt;&gt;&gt; &quot;PHP是世界上最好的语言&quot;[-3]
+&apos;的&apos;
+
+&gt;&gt;&gt; &quot;PHP是世界上最好的语言&quot;[0:3]
+&apos;PHP&apos;
+
+&gt;&gt;&gt; len(&quot;PHP是世界上最好的语言&quot;) #获取字符串长度
+12
+
+&gt;&gt;&gt; &quot;PHP是世界上最好的语言&quot;[7:-3]
+&apos;最好&apos;
+</code></pre><p>2.4 程序的语句元素</p>
+<p>表达式：产生或计算新数据值的代码片段，数据和操作符构成，运算结果的类型由操作符或运算符决定。</p>
+<p>赋值语句：使用等号（=）表示，变量=表达式。双等号（==）判断相等，True相等，False不相等。</p>
+<pre><code>&gt;&gt;&gt; a = 666  #赋值
+&gt;&gt;&gt; print(a)
+666
+
+&gt;&gt;&gt; a,b = 666,999   #同步赋值
+&gt;&gt;&gt; x,y = &apos;PHP&apos;,&apos;Python&apos;
+&gt;&gt;&gt; print(x)
+PHP
+&gt;&gt;&gt; print(a)
+666
+
+&gt;&gt;&gt; x,y = y,x  #同步赋值的应用 互换变量
+</code></pre><p>引用：(1)全面命名空间引用： import 功能库名称，调用：功能库名称.函数名称()</p>
+<pre><code>       (2)具体函数引用：from 功能库名称 import 函数名，调用：函数名称()
+
+       (3)全函数引用：from 功能库名称 import * ，调用：函数名称()
+
+       (4)别名引用：import 功能库名称 as 功能库别名，调用：功能库别名.函数名称()
+
+#引用turtle库画圆
+&gt;&gt;&gt; import turtle
+&gt;&gt;&gt; turtle.fd(-200)
+&gt;&gt;&gt; turtle.right(90)
+&gt;&gt;&gt; turtle.circle(200)
+</code></pre><p><img src="image/p21.png"></p>
+<p>2.5 基本输入输出函数</p>
+<p>input()：变量=input(“提示性文字”) ，返回字符串。</p>
+<pre><code>&gt;&gt;&gt; a = input(&quot;请输入一个小数:&quot;)
+请输入一个小数:6.66
+&gt;&gt;&gt; print(a)
+6.66
+</code></pre><p>eval()：变量=eval(“字符串”)，去掉字符串最外侧的引号，执行去掉引号后的字符内容。</p>
+<pre><code>&gt;&gt;&gt; a = eval(&quot;1.11 + 5.55&quot;)
+&gt;&gt;&gt; print(a)
+6.66
+
+#eval()结合input()使用 获取用户输入的数字
+&gt;&gt;&gt; a = eval(input(&quot;请输入一个数:&quot;))
+请输入一个数:333
+&gt;&gt;&gt; print(a*2)
+666
+</code></pre><p>print()：输出运算结果。</p>
+<pre><code>#第一种 输出字符串
+&gt;&gt;&gt; print(&quot;挺好&quot;)
+挺好
+
+#第二种 输出一个或多个变量
+&gt;&gt;&gt; a=666
+&gt;&gt;&gt; print(a,a,a)
+666 666 666
+
+#第三种 混合输出字符串与变量值
+#格式：print(&quot;字符串模板&quot;.format(变量1,2,3))  {}代表一个槽位，对应.format里的变量
+&gt;&gt;&gt; a,b=6,111
+&gt;&gt;&gt; print(&quot;数字{}和数字{}的乘积是{}&quot;.format(a,b,a*b))
+数字6和数字111的乘积是666
+
+
+&gt;&gt;&gt; a=666   #end参数避免默认换行
+&gt;&gt;&gt; print(a,end=&quot;.&quot;)
+666.
+</code></pre><p>结束^_^</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/01/26/全国计算机等级考试Python二级（一）/" rel="next" title="全国计算机等级考试Python二级（一）">
+                <i class="fa fa-chevron-left"></i> 全国计算机等级考试Python二级（一）
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/01/26/全国计算机等级考试Python二级（三）/" rel="prev" title="全国计算机等级考试Python二级（三）">
+                全国计算机等级考试Python二级（三） <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">yy</p>
+              <p class="site-description motion-element" itemprop="description">To knowledge!!!</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">yy</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
