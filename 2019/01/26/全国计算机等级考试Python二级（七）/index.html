@@ -315,7 +315,7 @@
 <pre><code>使用open()函数打开文件，返回一个操作这个文件的变量，&lt;变量名&gt; = open(&lt;文件路径及文件名&gt;, &lt;打开模式&gt;)
 
 使用close()方法关闭文件，释放文件的使用授权，&lt;变量名&gt;.close()
-</code></pre><p><img src="image/p71.png"></p>
+</code></pre><p><img src="/2019/01/26/全国计算机等级考试Python二级（七）/image/p71.png"></p>
 <p>/#文本文件方式<br>f = open(“a.txt”,”rt”)<br>print(f.readline())<br>f.close()</p>
 <blockquote>
 <blockquote>
@@ -339,7 +339,7 @@
 </blockquote>
 </blockquote>
 </blockquote>
-<p><img src="image/p72.png"></p>
+<p><img src="/2019/01/26/全国计算机等级考试Python二级（七）/image/p72.png"></p>
 <blockquote>
 <blockquote>
 <blockquote>
@@ -384,9 +384,9 @@
 </blockquote>
 <p>一维数据：由对等关系的有序或无序数据构成，采用线性方式组织。例如：北京、上海、天津、重庆。</p>
 <p>二维数据：也称表格数据，由关联关系数据构成，采用二维表格方式组织。例如：国家统计局发布的居民消费价格指数。</p>
-<p><img src="image/p73.png"></p>
+<p><img src="/2019/01/26/全国计算机等级考试Python二级（七）/image/p73.png"></p>
 <p>高维数据：由键值对类型的数据构成，采用对象方式组织，可以多层嵌套。衍生出HTML、XML、JSON等具体数据组织的语法结构。</p>
-<p><img src="image/p74.png"></p>
+<p><img src="/2019/01/26/全国计算机等级考试Python二级（七）/image/p74.png"></p>
 <p>7.3 一维数据的处理<br>一维数据的表示：</p>
 <blockquote>
 <blockquote>
@@ -405,12 +405,12 @@
 <p>[‘北京’, ‘上海’, ‘天津’, ‘重庆’]<br>7.4 二维数据的处理<br>二维数据的表示：</p>
 </blockquote>
 </blockquote>
-<p><img src="image/p75.png"></p>
+<p><img src="/2019/01/26/全国计算机等级考试Python二级（七）/image/p75.png"></p>
 <p>二维数据的存储：由一维数据组成，用CSV格式文件存储。每一行是一维数据，整个CSV文件是一个二维数据</p>
 <p>/# ls代表二维列表，此处省略<br>f = open(“cpi.csv”, “w”)<br>for row in ls:<br>    f.write(“,”.join(row)+ “\n”)<br>f.close()<br>二维数据的处理：从CSV文件读入二维数据，并将其表示为二维列表对象</p>
-<p>f = open(“cpi.csv”, “r”)<br>ls = []<br>for line in f:<br>    ls.append(line.strip(‘\n’).split(“,”))<br>f.close()<br>print(ls)<br><img src="image/p76.png"></p>
+<p>f = open(“cpi.csv”, “r”)<br>ls = []<br>for line in f:<br>    ls.append(line.strip(‘\n’).split(“,”))<br>f.close()<br>print(ls)<br><img src="/2019/01/26/全国计算机等级考试Python二级（七）/image/p76.png"></p>
 <p>二维列表一般需要借助循环遍历实现对每个数据的处理：</p>
-<p>/#对二维数据进行格式化输出，打印成表格形状<br>for row in ls:<br>     line = “”<br>     for item in row:<br>          line += “{:10}\t”.format(item)<br>     print(line)<br><img src="image/p77.png"></p>
+<p>/#对二维数据进行格式化输出，打印成表格形状<br>for row in ls:<br>     line = “”<br>     for item in row:<br>          line += “{:10}\t”.format(item)<br>     print(line)<br><img src="/2019/01/26/全国计算机等级考试Python二级（七）/image/p77.png"></p>
 
       
     </div>
