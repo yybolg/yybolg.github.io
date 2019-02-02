@@ -79,19 +79,25 @@
 
 
 
-<meta name="description" content="第2章 Python语言基本语法元素">
+<meta name="description" content="第7章 文件和数据格式化">
 <meta property="og:type" content="article">
-<meta property="og:title" content="全国计算机等级考试Python二级(二）">
-<meta property="og:url" content="https://yy.github.io/2019/01/26/全国计算机等级考试Python二级（二）/index.html">
+<meta property="og:title" content="全国计算机等级考试Python二级（七）">
+<meta property="og:url" content="https://yy.github.io/2019/01/25/全国计算机等级考试Python二级（七）/index.html">
 <meta property="og:site_name" content="yybolg">
-<meta property="og:description" content="第2章 Python语言基本语法元素">
+<meta property="og:description" content="第7章 文件和数据格式化">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://s2.ax1x.com/2019/01/30/k1iErT.png">
-<meta property="og:updated_time" content="2019-01-30T14:39:38.410Z">
+<meta property="og:image" content="https://s2.ax1x.com/2019/01/30/k1iWJs.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/01/30/k1i6eS.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/01/30/k1igoQ.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/01/30/k1icdg.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/01/30/k1isL8.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/01/30/k1iRij.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/01/30/k1ifWn.png">
+<meta property="og:updated_time" content="2019-02-01T04:20:24.311Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="全国计算机等级考试Python二级(二）">
-<meta name="twitter:description" content="第2章 Python语言基本语法元素">
-<meta name="twitter:image" content="https://s2.ax1x.com/2019/01/30/k1iErT.png">
+<meta name="twitter:title" content="全国计算机等级考试Python二级（七）">
+<meta name="twitter:description" content="第7章 文件和数据格式化">
+<meta name="twitter:image" content="https://s2.ax1x.com/2019/01/30/k1iWJs.png">
 
 
 
@@ -121,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="https://yy.github.io/2019/01/26/全国计算机等级考试Python二级（二）/">
+  <link rel="canonical" href="https://yy.github.io/2019/01/25/全国计算机等级考试Python二级（七）/">
 
 
 
 
 
-  <title>全国计算机等级考试Python二级(二） | yybolg</title>
+  <title>全国计算机等级考试Python二级（七） | yybolg</title>
   
 
 
@@ -194,6 +200,16 @@
         </li>
       
         
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
         <li class="menu-item menu-item-archives">
           <a href="/archives/" rel="section">
             
@@ -236,7 +252,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://yy.github.io/2019/01/26/全国计算机等级考试Python二级（二）/">
+    <link itemprop="mainEntityOfPage" href="https://yy.github.io/2019/01/25/全国计算机等级考试Python二级（七）/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="yy">
@@ -253,7 +269,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">全国计算机等级考试Python二级(二）</h1>
+          <h1 class="post-title" itemprop="name headline">全国计算机等级考试Python二级（七）</h1>
         
 
         <div class="post-meta">
@@ -265,8 +281,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-26T16:48:10+08:00">
-                2019-01-26
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-25T16:59:53+08:00">
+                2019-01-25
               </time>
             
 
@@ -303,109 +319,108 @@
       
 
       
-        <p>第2章 Python语言基本语法元素<br><a id="more"></a><br>对于一些刚接触Python的新手可能会遇到安装失败的问题，这种开源的东西就需要我们以各种方式解决问题，搜了一下api-ms-win-crt-process- 1-1-0.dll丢失，<a href="https://blog.csdn.net/gangeqian2/article/details/79307416" target="_blank" rel="noopener">https://blog.csdn.net/gangeqian2/article/details/79307416</a> 。对于其他安装不上的原因可以自行google。<br>进入正题：<br>2.1 程序的格式框架</p>
-<p>缩进：Tab键或4个空格（建议）。用于表示程序间的包含和层次关系。例如if、while、for、def、class等保留字使用缩进。unexpected indent表示缩进错误。</p>
-<pre><code>d={}
-for c in(65,97):
-    for i in range(26):
-        d[chr(i+c)]=chr((i+13)%26+c)
-print(&quot;&quot;.join([d.get(c,c) for c in d]))
-</code></pre><p>注释：以#开头表示，多行注释每行前面都加#</p>
-<pre><code>#这是一个真理注释
-print(&quot;PHP是世界上最好的语言&quot;)
-</code></pre><p>2.2 语法元素的名称</p>
-<p>变量：保存和表示数据值，通过赋值（等号=）来修改，随时命名、随时赋值、随时使用。</p>
-<p>命名：给变量或其他程序元素关联名称或标识符的过程。可以采用大小写字母、数字、下划线、汉字及组合命名，长度没有限制。首字符不能是数字，标识符中间不能有空格、不能与保留字相同、大小写敏感，标点符号全部为英文标点。</p>
-<p>保留字：关键字，内部定义并保留使用的标识符，大小写敏感，Python3版本共33个保留字。</p>
-<pre><code>#Python3保留字
-and    as        assert  break   class  continue  def
-def    elif      else    except  False  finally   for
-from   global    if      import  in     is        lambda
-None   nonlocal  not     or      pass   raise     return
-True   try       while   with    yield
-</code></pre><p>2.3 数据类型</p>
-<p>数据类型：表示数据的含义，消除计算机对数据理解的二义性。Python有数字、字符串、元祖、集合、列表、字典类型等。</p>
-<p>数字类型：整数、浮点数、复数。整数有十进制、十六进制、八进制、二进制，可以直接比较。浮点数带有小数点，只有十进制，可以用科学计数法表示。</p>
-<p>字符串类型：字符序列，用双引号” “或单引号’ ‘包括起来（作用相同），可以对单个字符或字符片段进行索引。</p>
-<pre><code>&gt;&gt;&gt; &quot;PHP是世界上最好的语言&quot;[1]
-&apos;H&apos;
+        <p>第7章 文件和数据格式化<br><a id="more"></a><br>7.1 文件的使用<br>文件：数据的集合和抽象，存储在辅助存储器上的一组数据序列，可以包含任何数据内容。</p>
+<p>文件类型：文本文件（由单一特定编码的字符组成）、二进制文件（比特0和比特1组成）。</p>
+<p>文件的打开和关闭：</p>
+<pre><code>使用open()函数打开文件，返回一个操作这个文件的变量，&lt;变量名&gt; = open(&lt;文件路径及文件名&gt;, &lt;打开模式&gt;)
 
-&gt;&gt;&gt; &quot;PHP是世界上最好的语言&quot;[-3]
-&apos;的&apos;
-
-&gt;&gt;&gt; &quot;PHP是世界上最好的语言&quot;[0:3]
-&apos;PHP&apos;
-
-&gt;&gt;&gt; len(&quot;PHP是世界上最好的语言&quot;) #获取字符串长度
-12
-
-&gt;&gt;&gt; &quot;PHP是世界上最好的语言&quot;[7:-3]
-&apos;最好&apos;
-</code></pre><p>2.4 程序的语句元素</p>
-<p>表达式：产生或计算新数据值的代码片段，数据和操作符构成，运算结果的类型由操作符或运算符决定。</p>
-<p>赋值语句：使用等号（=）表示，变量=表达式。双等号（==）判断相等，True相等，False不相等。</p>
-<pre><code>&gt;&gt;&gt; a = 666  #赋值
-&gt;&gt;&gt; print(a)
-666
-
-&gt;&gt;&gt; a,b = 666,999   #同步赋值
-&gt;&gt;&gt; x,y = &apos;PHP&apos;,&apos;Python&apos;
-&gt;&gt;&gt; print(x)
-PHP
-&gt;&gt;&gt; print(a)
-666
-
-&gt;&gt;&gt; x,y = y,x  #同步赋值的应用 互换变量
-</code></pre><p>引用：(1)全面命名空间引用： import 功能库名称，调用：功能库名称.函数名称()</p>
-<pre><code>       (2)具体函数引用：from 功能库名称 import 函数名，调用：函数名称()
-
-       (3)全函数引用：from 功能库名称 import * ，调用：函数名称()
-
-       (4)别名引用：import 功能库名称 as 功能库别名，调用：功能库别名.函数名称()
-
-#引用turtle库画圆
-&gt;&gt;&gt; import turtle
-&gt;&gt;&gt; turtle.fd(-200)
-&gt;&gt;&gt; turtle.right(90)
-&gt;&gt;&gt; turtle.circle(200)
-</code></pre><p><img src="https://s2.ax1x.com/2019/01/30/k1iErT.png"></p>
-<p>2.5 基本输入输出函数</p>
-<p>input()：变量=input(“提示性文字”) ，返回字符串。</p>
-<pre><code>&gt;&gt;&gt; a = input(&quot;请输入一个小数:&quot;)
-请输入一个小数:6.66
-&gt;&gt;&gt; print(a)
-6.66
-</code></pre><p>eval()：变量=eval(“字符串”)，去掉字符串最外侧的引号，执行去掉引号后的字符内容。</p>
-<pre><code>&gt;&gt;&gt; a = eval(&quot;1.11 + 5.55&quot;)
-&gt;&gt;&gt; print(a)
-6.66
-
-#eval()结合input()使用 获取用户输入的数字
-&gt;&gt;&gt; a = eval(input(&quot;请输入一个数:&quot;))
-请输入一个数:333
-&gt;&gt;&gt; print(a*2)
-666
-</code></pre><p>print()：输出运算结果。</p>
-<pre><code>#第一种 输出字符串
-&gt;&gt;&gt; print(&quot;挺好&quot;)
-挺好
-
-#第二种 输出一个或多个变量
-&gt;&gt;&gt; a=666
-&gt;&gt;&gt; print(a,a,a)
-666 666 666
-
-#第三种 混合输出字符串与变量值
-#格式：print(&quot;字符串模板&quot;.format(变量1,2,3))  {}代表一个槽位，对应.format里的变量
-&gt;&gt;&gt; a,b=6,111
-&gt;&gt;&gt; print(&quot;数字{}和数字{}的乘积是{}&quot;.format(a,b,a*b))
-数字6和数字111的乘积是666
-
-
-&gt;&gt;&gt; a=666   #end参数避免默认换行
-&gt;&gt;&gt; print(a,end=&quot;.&quot;)
-666.
-</code></pre><p>结束^_^</p>
+使用close()方法关闭文件，释放文件的使用授权，&lt;变量名&gt;.close()
+</code></pre><p><img src="https://s2.ax1x.com/2019/01/30/k1iWJs.png"></p>
+<p>/#文本文件方式<br>f = open(“a.txt”,”rt”)<br>print(f.readline())<br>f.close()</p>
+<blockquote>
+<blockquote>
+<blockquote>
+</blockquote>
+<p>全国计算机等级考试</p>
+</blockquote>
+</blockquote>
+<p>/#二进制方式<br>f = open(“a.txt”,”rb”)<br>print(f.readline())<br>f.close()</p>
+<blockquote>
+<blockquote>
+<blockquote>
+</blockquote>
+<p>b’\xc8\xab\xb9\xfa\xbc\xc6\xcb\xe3\xbb\xfa\xb5\xc8\xbc\xb6\xbf\xbc\xca\xd4’</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>PATH = “D:\“<br>f = open(PATH + “a.txt”, “rt”)<br>print(f.readline())<br>国家计算机等级考试<br>f.close()<br>print(f.readline())<br>Traceback (most recent call last):<br>  File “&lt;pyshell#81&gt;”, line 1, in <module><br>    print(f.readline())<br>ValueError: I/O operation on closed file.<br> 文件的读写：</module></p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p><img src="https://s2.ax1x.com/2019/01/30/k1i6eS.png"></p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>f = open(“D://b.txt”, “r”)<br>s = f.read()    #适用于文件不大 结果是一个字符串<br>print(s)<br>新年都未有芳华，二月初惊见草芽。<br>白雪却嫌春色晚，故穿庭树作飞花。<br>f.close()</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>f = open(“D://b.txt”, “r”)<br>ls = f.readlines()    #结果是一个列表<br>print(ls)<br>[‘新年都未有芳华，二月初惊见草芽。\n’, ‘白雪却嫌春色晚，故穿庭树作飞花。\n’]<br>f.close()</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>f = open(“D://b.txt”, “r”)<br>s = f.read()<br>print(s)<br>新年都未有芳华，二月初惊见草芽。<br>白雪却嫌春色晚，故穿庭树作飞花。<br>f.seek(0)  # 将读取指针重置到文件开头，否则再次读取为空[]<br>ls = f.readlines()<br>print(ls)<br>[‘新年都未有芳华，二月初惊见草芽。\n’, ‘白雪却嫌春色晚，故穿庭树作飞花。\n’]<br>f.close()</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>/#遍历循环逐行遍历文件<br>f = open(“D://b.txt”, “r”)<br>for line in f:<br>print(line)<br>f.close()</p>
+<blockquote>
+<blockquote>
+</blockquote>
+<p>新年都未有芳华，二月初惊见草芽。</p>
+</blockquote>
+<p>白雪却嫌春色晚，故穿庭树作飞花。</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>f = open(“D://c.txt”, “w”)<br>f.write(‘新年都未有芳华\n’)<br>f.write(‘二月初惊见草芽\n’)<br>f.write(‘白雪却嫌春色晚\n’)<br>f.write(‘故穿庭树作飞花\n’)<br>f.close()</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>ls = [‘新年都未有芳华\n’, ‘二月初惊见草芽\n’,’白雪却嫌春色晚\n’,’故穿庭树作飞花\n’]<br>f = open(“D://c.txt”, “w”)<br>f.writelines(ls)<br>f.close()<br>7.2 数据组织的维度<br>数据组织：一维数据、二维数据和高维数据。</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>一维数据：由对等关系的有序或无序数据构成，采用线性方式组织。例如：北京、上海、天津、重庆。</p>
+<p>二维数据：也称表格数据，由关联关系数据构成，采用二维表格方式组织。例如：国家统计局发布的居民消费价格指数。</p>
+<p><img src="https://s2.ax1x.com/2019/01/30/k1igoQ.png"></p>
+<p>高维数据：由键值对类型的数据构成，采用对象方式组织，可以多层嵌套。衍生出HTML、XML、JSON等具体数据组织的语法结构。</p>
+<p><img src="https://s2.ax1x.com/2019/01/30/k1icdg.png"></p>
+<p>7.3 一维数据的处理<br>一维数据的表示：</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>ls = [‘北京’, ‘上海’, ‘天津’, ‘重庆’]<br>print(ls)<br>[‘北京’, ‘上海’, ‘天津’, ‘重庆’]<br>一维数据的存储：空格分隔、逗号分隔（CSV存储格式）、换行分隔、其他特殊符号分隔（例如分号）。</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>列表对象输出为CSV格式文件：</p>
+<p>ls = [‘北京’, ‘上海’, ‘天津’, ‘重庆’]<br>f = open(“city.csv”, “w”)<br>f.write(“,”.join(ls)+ “\n”)<br>f.close()<br>北京,上海,天津,重庆<br>一维数据的处理：从CSV文件读入一维数据，将其表示为列表对象 </p>
+<p>f = open(“city.csv”, “r”)<br>ls = f.read().strip(‘\n’).split(“,”)<br>f.close()<br>print(ls)</p>
+<blockquote>
+<blockquote>
+<blockquote>
+</blockquote>
+<p>[‘北京’, ‘上海’, ‘天津’, ‘重庆’]<br>7.4 二维数据的处理<br>二维数据的表示：</p>
+</blockquote>
+</blockquote>
+<p><img src="https://s2.ax1x.com/2019/01/30/k1isL8.png"></p>
+<p>二维数据的存储：由一维数据组成，用CSV格式文件存储。每一行是一维数据，整个CSV文件是一个二维数据</p>
+<p>/# ls代表二维列表，此处省略<br>f = open(“cpi.csv”, “w”)<br>for row in ls:<br>    f.write(“,”.join(row)+ “\n”)<br>f.close()<br>二维数据的处理：从CSV文件读入二维数据，并将其表示为二维列表对象</p>
+<p>f = open(“cpi.csv”, “r”)<br>ls = []<br>for line in f:<br>    ls.append(line.strip(‘\n’).split(“,”))<br>f.close()<br>print(ls)<br><img src="https://s2.ax1x.com/2019/01/30/k1iRij.png"></p>
+<p>二维列表一般需要借助循环遍历实现对每个数据的处理：</p>
+<p>/#对二维数据进行格式化输出，打印成表格形状<br>for row in ls:<br>     line = “”<br>     for item in row:<br>          line += “{:10}\t”.format(item)<br>     print(line)<br><img src="https://s2.ax1x.com/2019/01/30/k1ifWn.png"></p>
 
       
     </div>
@@ -436,8 +451,8 @@ PHP
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/01/26/全国计算机等级考试Python二级（一）/" rel="next" title="全国计算机等级考试Python二级（一）">
-                <i class="fa fa-chevron-left"></i> 全国计算机等级考试Python二级（一）
+              <a href="/2019/01/04/我的第一篇bolg/" rel="next" title="我的第一篇bolg">
+                <i class="fa fa-chevron-left"></i> 我的第一篇bolg
               </a>
             
           </div>
@@ -446,8 +461,8 @@ PHP
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/01/26/全国计算机等级考试Python二级（四）/" rel="prev" title="全国计算机等级考试Python二级（四）">
-                全国计算机等级考试Python二级（四） <i class="fa fa-chevron-right"></i>
+              <a href="/2019/01/26/全国计算机等级考试Python二级（六）/" rel="prev" title="全国计算机等级考试Python二级（六）">
+                全国计算机等级考试Python二级（六） <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -518,7 +533,7 @@ PHP
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
