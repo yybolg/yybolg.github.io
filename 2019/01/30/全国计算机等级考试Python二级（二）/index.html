@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="第2章 Python语言基本语法元素">
+<meta name="description" content="Python语言基本语法元素">
 <meta property="og:type" content="article">
 <meta property="og:title" content="全国计算机等级考试Python二级(二）">
 <meta property="og:url" content="https://yy.github.io/2019/01/30/全国计算机等级考试Python二级（二）/index.html">
 <meta property="og:site_name" content="yybolg">
-<meta property="og:description" content="第2章 Python语言基本语法元素">
+<meta property="og:description" content="Python语言基本语法元素">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://s2.ax1x.com/2019/01/30/k1iErT.png">
-<meta property="og:updated_time" content="2019-02-01T04:20:18.521Z">
+<meta property="og:updated_time" content="2019-02-05T05:54:12.082Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="全国计算机等级考试Python二级(二）">
-<meta name="twitter:description" content="第2章 Python语言基本语法元素">
+<meta name="twitter:description" content="Python语言基本语法元素">
 <meta name="twitter:image" content="https://s2.ax1x.com/2019/01/30/k1iErT.png">
 
 
@@ -313,7 +313,9 @@
       
 
       
-        <p>第2章 Python语言基本语法元素<br><a id="more"></a><br>对于一些刚接触Python的新手可能会遇到安装失败的问题，这种开源的东西就需要我们以各种方式解决问题，搜了一下api-ms-win-crt-process- 1-1-0.dll丢失，<a href="https://blog.csdn.net/gangeqian2/article/details/79307416" target="_blank" rel="noopener">https://blog.csdn.net/gangeqian2/article/details/79307416</a> 。对于其他安装不上的原因可以自行google。<br>进入正题：<br>2.1 程序的格式框架</p>
+        <p>Python语言基本语法元素<br><a id="more"></a><br>对于一些刚接触Python的新手可能会遇到安装失败的问题，这种开源的东西就需要我们以各种方式解决问题，搜了一下api-ms-win-crt-process- 1-1-0.dll丢失，<a href="https://blog.csdn.net/gangeqian2/article/details/79307416" target="_blank" rel="noopener">https://blog.csdn.net/gangeqian2/article/details/79307416</a> 。对于其他安装不上的原因可以自行google。<br>进入正题：</p>
+<h2>程序的格式框架</h2>
+
 <p>缩进：Tab键或4个空格（建议）。用于表示程序间的包含和层次关系。例如if、while、for、def、class等保留字使用缩进。unexpected indent表示缩进错误。</p>
 <pre><code>d={}
 for c in(65,97):
@@ -323,7 +325,8 @@ print(&quot;&quot;.join([d.get(c,c) for c in d]))
 </code></pre><p>注释：以#开头表示，多行注释每行前面都加#</p>
 <pre><code>#这是一个真理注释
 print(&quot;PHP是世界上最好的语言&quot;)
-</code></pre><p>2.2 语法元素的名称</p>
+</code></pre><h2>语法元素的名称</h2>
+
 <p>变量：保存和表示数据值，通过赋值（等号=）来修改，随时命名、随时赋值、随时使用。</p>
 <p>命名：给变量或其他程序元素关联名称或标识符的过程。可以采用大小写字母、数字、下划线、汉字及组合命名，长度没有限制。首字符不能是数字，标识符中间不能有空格、不能与保留字相同、大小写敏感，标点符号全部为英文标点。</p>
 <p>保留字：关键字，内部定义并保留使用的标识符，大小写敏感，Python3版本共33个保留字。</p>
@@ -333,7 +336,8 @@ def    elif      else    except  False  finally   for
 from   global    if      import  in     is        lambda
 None   nonlocal  not     or      pass   raise     return
 True   try       while   with    yield
-</code></pre><p>2.3 数据类型</p>
+</code></pre><h2>数据类型</h2>
+
 <p>数据类型：表示数据的含义，消除计算机对数据理解的二义性。Python有数字、字符串、元祖、集合、列表、字典类型等。</p>
 <p>数字类型：整数、浮点数、复数。整数有十进制、十六进制、八进制、二进制，可以直接比较。浮点数带有小数点，只有十进制，可以用科学计数法表示。</p>
 <p>字符串类型：字符序列，用双引号” “或单引号’ ‘包括起来（作用相同），可以对单个字符或字符片段进行索引。</p>
@@ -351,7 +355,8 @@ True   try       while   with    yield
 
 &gt;&gt;&gt; &quot;PHP是世界上最好的语言&quot;[7:-3]
 &apos;最好&apos;
-</code></pre><p>2.4 程序的语句元素</p>
+</code></pre><h2>程序的语句元素</h2>
+
 <p>表达式：产生或计算新数据值的代码片段，数据和操作符构成，运算结果的类型由操作符或运算符决定。</p>
 <p>赋值语句：使用等号（=）表示，变量=表达式。双等号（==）判断相等，True相等，False不相等。</p>
 <pre><code>&gt;&gt;&gt; a = 666  #赋值
@@ -379,7 +384,8 @@ PHP
 &gt;&gt;&gt; turtle.right(90)
 &gt;&gt;&gt; turtle.circle(200)
 </code></pre><p><img src="https://s2.ax1x.com/2019/01/30/k1iErT.png"></p>
-<p>2.5 基本输入输出函数</p>
+<h2>基本输入输出函数</h2>
+
 <p>input()：变量=input(“提示性文字”) ，返回字符串。</p>
 <pre><code>&gt;&gt;&gt; a = input(&quot;请输入一个小数:&quot;)
 请输入一个小数:6.66
@@ -510,8 +516,17 @@ PHP
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -555,6 +570,22 @@ PHP
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">程序的格式框架</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">语法元素的名称</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">3.</span> <span class="nav-text">数据类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">4.</span> <span class="nav-text">程序的语句元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">5.</span> <span class="nav-text">基本输入输出函数</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

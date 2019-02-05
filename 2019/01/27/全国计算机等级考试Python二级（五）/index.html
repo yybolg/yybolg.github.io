@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="第5章 函数和代码复用">
+<meta name="description" content="函数和代码复用">
 <meta property="og:type" content="article">
 <meta property="og:title" content="全国计算机等级考试Python二级（五）">
 <meta property="og:url" content="https://yy.github.io/2019/01/27/全国计算机等级考试Python二级（五）/index.html">
 <meta property="og:site_name" content="yybolg">
-<meta property="og:description" content="第5章 函数和代码复用">
+<meta property="og:description" content="函数和代码复用">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-02-01T04:20:23.103Z">
+<meta property="og:updated_time" content="2019-02-05T05:54:15.018Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="全国计算机等级考试Python二级（五）">
-<meta name="twitter:description" content="第5章 函数和代码复用">
+<meta name="twitter:description" content="函数和代码复用">
 
 
 
@@ -311,14 +311,15 @@
       
 
       
-        <p>第5章 函数和代码复用 </p>
+        <p>函数和代码复用 </p>
 <a id="more"></a>
-<p>5.1 函数的基本使用<br>函数定义：是程序的一种基本抽象方式，通过def保留字定义。</p>
+<p></p><h2>函数的基本使用</h2><br>函数定义：是程序的一种基本抽象方式，通过def保留字定义。<p></p>
 <p>/#函数定义规则<br>def &lt;函数名&gt;(&lt;参数列表&gt;):    #多个参数用逗号分隔<br>      &lt;函数体&gt;<br>     return &lt;返回值列表&gt;</p>
 <p>/# 定义一个对整数n求阶乘的函数<br>def fact(n):<br>    s = 1<br>    for i in range(1, n+1):<br>        s *= i<br>    return s<br>函数的调用：函数定义——调用——执行——返回</p>
 <p>#函数调用规则<br>&lt;函数名&gt;(&lt;实际赋值参数列表&gt;)</p>
 <h1 id="定义一个对整数n求阶乘的函数"><a href="#定义一个对整数n求阶乘的函数" class="headerlink" title="定义一个对整数n求阶乘的函数"></a>定义一个对整数n求阶乘的函数</h1><p>def fact(n):<br>    s = 1<br>    for i in range(1, n+1):<br>        s *= i<br>    return s</p>
-<h1 id="调用整数阶乘的函数"><a href="#调用整数阶乘的函数" class="headerlink" title="调用整数阶乘的函数"></a>调用整数阶乘的函数</h1><p>print(fact(100))<br>5.2 函数的参数传递<br>参数定义时可以指定默认值，可选参数一般都放置在非可选参数后面，支持按照参数名称方式传递。</p>
+<h1 id="调用整数阶乘的函数"><a href="#调用整数阶乘的函数" class="headerlink" title="调用整数阶乘的函数"></a>调用整数阶乘的函数</h1><p>print(fact(100))</p>
+<p></p><h2>函数的参数传递</h2><br>参数定义时可以指定默认值，可选参数一般都放置在非可选参数后面，支持按照参数名称方式传递。<p></p>
 <blockquote>
 <blockquote>
 <blockquote>
@@ -350,10 +351,11 @@
 <blockquote>
 <blockquote>
 <blockquote>
-<p>a,b = multiply(99, 2)<br>print(a)<br>198<br>print(b)<br>101<br>5.3 变量的作用域<br>局部变量：仅在函数内部使用的变量，函数退出时变量将不再存在。</p>
+<p>a,b = multiply(99, 2)<br>print(a)<br>198<br>print(b)<br>101</p>
 </blockquote>
 </blockquote>
 </blockquote>
+<p></p><h2>变量的作用域</h2><br>局部变量：仅在函数内部使用的变量，函数退出时变量将不再存在。<p></p>
 <p>全局变量：函数外定义的变量，在程序执行全过程有效。全部变量在函数内部使用时，需要提前使用保留字global声明。<br>/#局部变量z</p>
 <blockquote>
 <blockquote>
@@ -366,11 +368,12 @@
 <blockquote>
 <blockquote>
 <blockquote>
-<p>n = 2<br>def multiply(x, y = 10):<br>        global n   #声明全局变量<br>        return x<em>y</em>n<br>s = multiply(99, 2)<br>print(s)<br>396<br>5.4 代码复用<br>函数封装好处是代码复用。当更新函数功能时，所有被调用处的功能都被更新。减少函数间参数和返回值的数量。</p>
+<p>n = 2<br>def multiply(x, y = 10):<br>        global n   #声明全局变量<br>        return x<em>y</em>n<br>s = multiply(99, 2)<br>print(s)<br>396</p>
 </blockquote>
 </blockquote>
 </blockquote>
-<p>模块化设计以功能块为基本单位，两个基本要求：1.紧耦合：尽可能合理划分功能块，功能块内部耦合紧密；模块或系统间关系紧密，存在较多或复杂的相互调用。紧耦合的缺点在于更新一个模块可能导致其它模块变化，复用较困难。2.松耦合：模块间关系尽可能简单，功能块之间耦合度低。一般基于消息或协议实现，系统间交互简单，代表了模块化，是总体设计原则。</p>
+<p></p><h2>代码复用</h2><br>函数封装好处是代码复用。当更新函数功能时，所有被调用处的功能都被更新。减少函数间参数和返回值的数量。<p></p>
+<p>模块化设计以功能块为基本单位，两个基本要求：1.紧耦合：尽可能合理划分功能块，功能块内部耦合紧密；模块或系统间关系紧密，存在较多或复杂的相互调用。紧耦合的缺点在于更新一个模块可能导致其它模块变化，复用较困难。2.松耦合：模块间关系尽可能简单，功能块之间耦合度低。一般基于消息或协议实现，系统间交互简单，代表了模块化，是总体设计原则。<br>还剩四篇bolg左右的内容，一星期左右更出来吧，<br>ps：大一上学期放假第二天</p>
 
       
     </div>
@@ -529,7 +532,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#定义一个对整数n求阶乘的函数"><span class="nav-number">1.</span> <span class="nav-text">定义一个对整数n求阶乘的函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#调用整数阶乘的函数"><span class="nav-number">2.</span> <span class="nav-text">调用整数阶乘的函数</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">函数的基本使用</span></a></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#定义一个对整数n求阶乘的函数"><span class="nav-number"></span> <span class="nav-text">定义一个对整数n求阶乘的函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#调用整数阶乘的函数"><span class="nav-number"></span> <span class="nav-text">调用整数阶乘的函数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">函数的参数传递</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">变量的作用域</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">3.</span> <span class="nav-text">代码复用</span></a></li></ol></li></div>
             
 
           </div>

@@ -79,12 +79,12 @@
 
 
 
-<meta name="description" content="第7章 文件和数据格式化">
+<meta name="description" content="文件和数据格式化">
 <meta property="og:type" content="article">
 <meta property="og:title" content="全国计算机等级考试Python二级（七）">
 <meta property="og:url" content="https://yy.github.io/2019/01/25/全国计算机等级考试Python二级（七）/index.html">
 <meta property="og:site_name" content="yybolg">
-<meta property="og:description" content="第7章 文件和数据格式化">
+<meta property="og:description" content="文件和数据格式化">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://s2.ax1x.com/2019/01/30/k1iWJs.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/01/30/k1i6eS.png">
@@ -93,10 +93,10 @@
 <meta property="og:image" content="https://s2.ax1x.com/2019/01/30/k1isL8.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/01/30/k1iRij.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/01/30/k1ifWn.png">
-<meta property="og:updated_time" content="2019-02-01T04:20:24.311Z">
+<meta property="og:updated_time" content="2019-02-05T05:54:17.356Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="全国计算机等级考试Python二级（七）">
-<meta name="twitter:description" content="第7章 文件和数据格式化">
+<meta name="twitter:description" content="文件和数据格式化">
 <meta name="twitter:image" content="https://s2.ax1x.com/2019/01/30/k1iWJs.png">
 
 
@@ -319,7 +319,8 @@
       
 
       
-        <p>第7章 文件和数据格式化<br><a id="more"></a><br>7.1 文件的使用<br>文件：数据的集合和抽象，存储在辅助存储器上的一组数据序列，可以包含任何数据内容。</p>
+        <p>文件和数据格式化<br><a id="more"></a></p>
+<p></p><h2>文件的使用</h2><br>文件：数据的集合和抽象，存储在辅助存储器上的一组数据序列，可以包含任何数据内容。<p></p>
 <p>文件类型：文本文件（由单一特定编码的字符组成）、二进制文件（比特0和比特1组成）。</p>
 <p>文件的打开和关闭：</p>
 <pre><code>使用open()函数打开文件，返回一个操作这个文件的变量，&lt;变量名&gt; = open(&lt;文件路径及文件名&gt;, &lt;打开模式&gt;)
@@ -388,16 +389,17 @@
 <blockquote>
 <blockquote>
 <blockquote>
-<p>ls = [‘新年都未有芳华\n’, ‘二月初惊见草芽\n’,’白雪却嫌春色晚\n’,’故穿庭树作飞花\n’]<br>f = open(“D://c.txt”, “w”)<br>f.writelines(ls)<br>f.close()<br>7.2 数据组织的维度<br>数据组织：一维数据、二维数据和高维数据。</p>
+<p>ls = [‘新年都未有芳华\n’, ‘二月初惊见草芽\n’,’白雪却嫌春色晚\n’,’故穿庭树作飞花\n’]<br>f = open(“D://c.txt”, “w”)<br>f.writelines(ls)<br>f.close()</p>
 </blockquote>
 </blockquote>
 </blockquote>
+<p></p><h2>数据组织的维度</h2><br>数据组织：一维数据、二维数据和高维数据。<p></p>
 <p>一维数据：由对等关系的有序或无序数据构成，采用线性方式组织。例如：北京、上海、天津、重庆。</p>
 <p>二维数据：也称表格数据，由关联关系数据构成，采用二维表格方式组织。例如：国家统计局发布的居民消费价格指数。</p>
 <p><img src="https://s2.ax1x.com/2019/01/30/k1igoQ.png"></p>
 <p>高维数据：由键值对类型的数据构成，采用对象方式组织，可以多层嵌套。衍生出HTML、XML、JSON等具体数据组织的语法结构。</p>
 <p><img src="https://s2.ax1x.com/2019/01/30/k1icdg.png"></p>
-<p>7.3 一维数据的处理<br>一维数据的表示：</p>
+<p></p><h2>一维数据的处理</h2><br>一维数据的表示：<p></p>
 <blockquote>
 <blockquote>
 <blockquote>
@@ -412,15 +414,16 @@
 <blockquote>
 <blockquote>
 </blockquote>
-<p>[‘北京’, ‘上海’, ‘天津’, ‘重庆’]<br>7.4 二维数据的处理<br>二维数据的表示：</p>
+<p>[‘北京’, ‘上海’, ‘天津’, ‘重庆’]</p>
 </blockquote>
 </blockquote>
+<p></p><h2>二维数据的处理</h2><br>二维数据的表示：<p></p>
 <p><img src="https://s2.ax1x.com/2019/01/30/k1isL8.png"></p>
 <p>二维数据的存储：由一维数据组成，用CSV格式文件存储。每一行是一维数据，整个CSV文件是一个二维数据</p>
 <p>/# ls代表二维列表，此处省略<br>f = open(“cpi.csv”, “w”)<br>for row in ls:<br>    f.write(“,”.join(row)+ “\n”)<br>f.close()<br>二维数据的处理：从CSV文件读入二维数据，并将其表示为二维列表对象</p>
 <p>f = open(“cpi.csv”, “r”)<br>ls = []<br>for line in f:<br>    ls.append(line.strip(‘\n’).split(“,”))<br>f.close()<br>print(ls)<br><img src="https://s2.ax1x.com/2019/01/30/k1iRij.png"></p>
 <p>二维列表一般需要借助循环遍历实现对每个数据的处理：</p>
-<p>/#对二维数据进行格式化输出，打印成表格形状<br>for row in ls:<br>     line = “”<br>     for item in row:<br>          line += “{:10}\t”.format(item)<br>     print(line)<br><img src="https://s2.ax1x.com/2019/01/30/k1ifWn.png"></p>
+<p>/#对二维数据进行格式化输出，打印成表格形状<br>for row in ls:<br>     line = “”<br>     for item in row:<br>          line += “{:10}\t”.format(item)<br>     print(line)<br><img src="https://s2.ax1x.com/2019/01/30/k1ifWn.png"><br>第七篇结束。</p>
 
       
     </div>
@@ -515,8 +518,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -560,6 +572,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">文件的使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">数据组织的维度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">3.</span> <span class="nav-text">一维数据的处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">4.</span> <span class="nav-text">二维数据的处理</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
