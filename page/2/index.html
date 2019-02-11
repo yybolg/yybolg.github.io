@@ -244,6 +244,360 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://yy.github.io/2019/01/05/记一次小项目编写/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="yy">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/touxiang.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="yy">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/01/05/记一次小项目编写/" itemprop="url">记一次制作动态二维码项目编写</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-05T18:24:01+08:00">
+                2019-01-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/我的小项目/" itemprop="url" rel="index">
+                    <span itemprop="name">我的小项目</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  345
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p></p><h2>项目概要</h2><br>把一串字符或者URL写入二维码中，并且加一个gif当做背景<br>效果如下：<br><img src="https://s2.ax1x.com/2019/02/11/ka7mNj.png"><br><img src="https://s2.ax1x.com/2019/02/11/ka7VHg.png"><br><img src="https://s2.ax1x.com/2019/02/11/ka7lvV.gif"><br>用到了tkinter，myqr两个库。（打算后期加一些功能，会用到os）<br>下面说说踩到的坑吧。<p></p>
+<p></p><h3>下载安装myqr</h3><br>myqr需要其他三个pytho图像处理的基本库：pillow numpy imageio<br>安装的花先去pypi看看版本是否兼容，我刚开始python3.7运行正常，结果打包出现问题，后来得知3.7有很多bug，使用anaconda换了3.6.5版本，正常安装myqr，运行正常。<p></p>
+<p></p><h4>打包</h4><br>首先遇到编码问题，百度谷歌发现最优解是更改pyinstall配置文件或者声明.py编码格式，加了一句#-<em>- coding:utf-8 -</em>-，问题解决。<br>然后遇到窗口闪退，打包时去掉-w命令，发现报错原因：找不到myqr文件中导入的其他模块，百度谷歌，修改pyinstall配置文件，隐藏导入，问题解决。<br>再然后遇到ico图标问题，百度制作icon图标，结果发现有大小限制，超过那个大小会报错，然后打包失败，再次百度，找到一个在线制作ico网址： <a href="https://www.easyicon.net/covert/" target="_blank" rel="noopener">https://www.easyicon.net/covert/</a> 制作完成，然后打包成功。生成最终文件。<br>（注意：命令pyinstaller -i <strong>.ico -F </strong>.py   -F后面一定要直接接打包文件名）<p></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+    <div>
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://yy.github.io/2019/01/05/计算机二级python二级错题2/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="yy">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/touxiang.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="yy">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/01/05/计算机二级python二级错题2/" itemprop="url">计算机二级python二级错题2</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-05T16:22:51+08:00">
+                2019-01-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/计算机二级考试/" itemprop="url" rel="index">
+                    <span itemprop="name">计算机二级考试</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  300
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>DFD是结构化方法的需求分析工具<br>黑盒测试方法中，设计测试用例的主要根据是程序外部功能<br>数据库的三种模式：内模式处于最底层，它反映了数据在计算机物理结构中的实际存储形式，概念模式处于中间层，它反映了设计者的数据全局逻辑要求，而外模式处于最外层，它反映了用户对数据的要求。<br>常用的线性结构有：线性表，栈，队列，双队列，数组，串。<br>常见的非线性结构有：二维数组，多维数组，广义表，树(二叉树等)，图<br>概念设计阶段E-R图<br>类似于度为1的结点数：用特殊法。<br>算法的时间复杂度与空间复杂度一定相关，效率与存储结构有密切关系。<br>注意time，random，turtle是标准库，结巴是第三方库。<br>max(listV)：返回列表最大值<br>seek() 方法用于移动文件读取指针到指定位置。<br>字典：值可以取任何数据类型，但键必须是不可变的，如字符串，数字或元组。键不能是列表。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+    <div>
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://yy.github.io/2019/01/04/我的第一篇bolg/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -463,7 +817,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -474,7 +828,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
