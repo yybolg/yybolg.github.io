@@ -329,7 +329,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  345
+                  368
                 </span>
               
 
@@ -369,9 +369,9 @@
         
           
             <a id="more"></a>
-<p></p><h2>项目概要</h2><br>把一串字符或者URL写入二维码中，并且加一个gif当做背景<br>效果如下：<br><img src="https://s2.ax1x.com/2019/02/11/ka7mNj.png"><br><img src="https://s2.ax1x.com/2019/02/11/ka7VHg.png"><br><img src="https://s2.ax1x.com/2019/02/11/ka7lvV.gif"><br>用到了tkinter，myqr两个库。（打算后期加一些功能，会用到os）<br>下面说说踩到的坑吧。<p></p>
+<p></p><h2>项目概要</h2><br>把一串字符或者URL写入二维码中，并且加一个gif当做背景。（源码在我仓库开放）<br>效果如下：<br><img src="https://s2.ax1x.com/2019/02/11/ka7mNj.png"><br><img src="https://s2.ax1x.com/2019/02/11/ka7VHg.png"><br><img src="https://s2.ax1x.com/2019/02/11/ka7lvV.gif"><br>用到了tkinter，myqr两个库。（打算后期加一些功能，会用到os）<br>下面说说踩到的坑吧。<p></p>
 <p></p><h3>下载安装myqr</h3><br>myqr需要其他三个pytho图像处理的基本库：pillow numpy imageio<br>安装的花先去pypi看看版本是否兼容，我刚开始python3.7运行正常，结果打包出现问题，后来得知3.7有很多bug，使用anaconda换了3.6.5版本，正常安装myqr，运行正常。<p></p>
-<p></p><h4>打包</h4><br>首先遇到编码问题，百度谷歌发现最优解是更改pyinstall配置文件或者声明.py编码格式，加了一句#-<em>- coding:utf-8 -</em>-，问题解决。<br>然后遇到窗口闪退，打包时去掉-w命令，发现报错原因：找不到myqr文件中导入的其他模块，百度谷歌，修改pyinstall配置文件，隐藏导入，问题解决。<br>再然后遇到ico图标问题，百度制作icon图标，结果发现有大小限制，超过那个大小会报错，然后打包失败，再次百度，找到一个在线制作ico网址： <a href="https://www.easyicon.net/covert/" target="_blank" rel="noopener">https://www.easyicon.net/covert/</a> 制作完成，然后打包成功。生成最终文件。<br>（注意：命令pyinstaller -i <strong>.ico -F </strong>.py   -F后面一定要直接接打包文件名）<p></p>
+<p></p><h4>打包</h4><br>首先遇到编码问题，百度谷歌发现最优解是更改pyinstall配置文件或者声明.py编码格式，加了一句#-<em>- coding:utf-8 -</em>-，问题解决。<br>然后遇到窗口闪退，打包时去掉-w命令，发现报错原因：找不到myqr文件中导入的其他模块，百度谷歌，修改pyinstall配置文件，隐藏导入，问题解决。<br>再然后遇到ico图标问题，百度制作icon图标，结果发现有大小限制，超过那个大小会报错，然后打包失败，再次百度，找到一个在线制作ico网址： <a href="https://www.easyicon.net/covert/" target="_blank" rel="noopener">https://www.easyicon.net/covert/</a> 制作完成，然后打包成功。生成最终文件。<br>（注意：命令pyinstaller -i <strong>.ico -F </strong>.py   -F后面一定要直接接打包文件名）<br>（欢迎骚扰我，来一起让这个demo更有趣）<p></p>
 
           
         
