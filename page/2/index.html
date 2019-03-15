@@ -329,7 +329,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  368
+                  383
                 </span>
               
 
@@ -367,16 +367,17 @@
 
       
         
-          
-            <a id="more"></a>
-<p></p><h2>项目概要</h2><br>把一串字符或者URL写入二维码中，并且加一个gif当做背景。（源码在我仓库开放）<br>效果如下：<br><img src="https://s2.ax1x.com/2019/02/11/ka7mNj.png"><br><img src="https://s2.ax1x.com/2019/02/11/ka7VHg.png"><br><img src="https://s2.ax1x.com/2019/02/11/ka7lvV.gif"><br>用到了tkinter，myqr两个库。（打算后期加一些功能，会用到os）<br>下面说说踩到的坑吧。<p></p>
-<p></p><h3>下载安装myqr</h3><br>myqr需要其他三个pytho图像处理的基本库：pillow numpy imageio<br>安装的花先去pypi看看版本是否兼容，我刚开始python3.7运行正常，结果打包出现问题，后来得知3.7有很多bug，使用anaconda换了3.6.5版本，正常安装myqr，运行正常。<p></p>
-<p></p><h4>打包</h4><br>首先遇到编码问题，百度谷歌发现最优解是更改pyinstall配置文件或者声明.py编码格式，加了一句#-<em>- coding:utf-8 -</em>-，问题解决。<br>然后遇到窗口闪退，打包时去掉-w命令，发现报错原因：找不到myqr文件中导入的其他模块，百度谷歌，修改pyinstall配置文件，隐藏导入，问题解决。<br>再然后遇到ico图标问题，百度制作icon图标，结果发现有大小限制，超过那个大小会报错，然后打包失败，再次百度，找到一个在线制作ico网址： <a href="https://www.easyicon.net/covert/" target="_blank" rel="noopener">https://www.easyicon.net/covert/</a> 制作完成，然后打包成功。生成最终文件。<br>（注意：命令pyinstaller -i <strong>.ico -F </strong>.py   -F后面一定要直接接打包文件名）<br>（欢迎骚扰我，来一起让这个demo更有趣）<p></p>
-
-          
+          <p>二维码处理<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/01/05/记一次小项目编写/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
-    </div>
+    </p></div>
     
     
     
@@ -508,7 +509,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  1.1k
+                  1.8k
                 </span>
               
 
@@ -524,7 +525,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  4
+                  6
                 </span>
               
             </div>
@@ -548,7 +549,21 @@
         
           
             <a id="more"></a>
-<p>DFD是结构化方法的需求分析工具<br>黑盒测试方法中，设计测试用例的主要根据是程序外部功能<br>数据库的三种模式：内模式处于最底层，它反映了数据在计算机物理结构中的实际存储形式，概念模式处于中间层，它反映了设计者的数据全局逻辑要求，而外模式处于最外层，它反映了用户对数据的要求。<br>常用的线性结构有：线性表，栈，队列，双队列，数组，串。<br>常见的非线性结构有：二维数组，多维数组，广义表，树(二叉树等)，图<br>概念设计阶段E-R图<br>类似于度为1的结点数：用特殊法。<br>算法的时间复杂度与空间复杂度一定相关，效率与存储结构有密切关系。<br>注意time，random，turtle是标准库，结巴是第三方库。<br>max(listV)：返回列表最大值<br>seek() 方法用于移动文件读取指针到指定位置。<br>字典：值可以取任何数据类型，但键必须是不可变的，如字符串，数字或元组。键不能是列表。<br>选择排序法在最坏的情况下需要比较n(n–1)/2次<br>快速排序法比冒泡排序法的速度快<br>冒泡排序法是通过相邻数据元素的交换逐步将线性表变成有序<br>在PFD图中用箭头表示控制流<br>数据库设计的四个阶段按顺序为需求分析、概念设计，逻辑设计、物理设计<br>字符串比较大小：<br>比较规则是，从第一个字符开始，顺次向后直到出现不同的字符为止，然后以第一个不同的字符的ASCII值确定，例如上面的”abc”和”aabdfg”，由于第一个字符相同，都是’a’所以看下一个字符，第二个字符，一个是’b’,一个是‘a’，由于b的ASCII值比a的ASCII值大，所以，这二个字符串的比较结果是”abc”&gt;”aabdfg”<br>uniform：生成一个[a, b]之间的随机小数<br>函数传参时，一个*代表元组，两个*代表字典。Python random模块sample、randint、shuffle、choice随机函数<br>二、random模块重要函数<br>1 )、random() 返回0&lt;=n&lt;1之间的随机实数n；<br>2 )、choice(seq) 从序列seq中返回随机的元素；<br>3 )、getrandbits(n) 以长整型形式返回n个随机位；<br>4 )、shuffle(seq[, random]) 原地指定seq序列；<br>5 )、sample(seq, n) 从序列seq中选择n个随机且独立的元素<br>print(参数1,end=””)这样打印结尾不用换行符。<br>数据库（DB）、数据库系统（DBS）和数据库管理系统（DBMS）<br>DDL 是数据定义语言<br>DML 是数据操纵语言<br>DCL 是数据控制语言<br>数据库应用系统中的核心问题是数据库设计<br>int(true)=1<br>Python 中函数不包括参数函数<br>知道了三角形三边：a,b,c。三角形面积：p = (a+b+c)/2  pow(p <em> (p-a)</em>(p-b)*(p-c),0.5)<br>Python capitalize()将字符串的第一个字母变成大写,其他字母变小写。<br>回归测试不属于软件测试实施步骤。<br>E-R图：矩形框：实体。椭圆形：实体属性。菱形：实体之间关系。<br>栈支持子程序调用。<br>python同一行显示多条语句时：可以用；隔开（像PHP一样）<br>str.join(objext)连接符，可以把字符串，序列，字典（链接键）通过str连接起来。<br>Python 中允许利用 raise 语句由程序主动引发异常<br>空树根结点为零<br>数据库系统包括数据库管理系统和数据库<br>一般地，软件开发模式：1.边做边改模型2.瀑布模型3.演化模型4.增量模型5.螺旋模型6.喷泉模型7.敏捷模型-SCRUM没有扇形。<br>在 Python 中，类型属于对象，变量是没有类型的。<br>fileObject.open()只是打开，不能创建。<br>dict.get(key, default=None)</p>
+<p></p><h1>算法</h1><br>最坏排序次数：<br>冒泡：n(n-1)/2<br>快速排序：n(n-1)/2<br>直接插入：n(n-1)/2<br>顺序表可以随机访问任意一个结点，而链表必须从第一个数据结点出发，逐一查找每个结点。<br>循环队列的front=teal时，列队满或者列队空。<br>常用的线性结构有：线性表，栈，队列，双队列，数组，串。<br>常见的非线性结构有：二维数组，多维数组，广义表，树(二叉树等)，图<br>类似于度为1的结点数：用特殊法。<p></p>
+<p></p><h1>软件开发</h1><br>软件开发生命周期主要是需求分析<br>集成测试调用接口，主要发现需求分析的错误。<br>需求分析阶段不包括软件可行性研究的依据。<br>DFD是结构化方法的需求分析工具，它支持系统的功能建模。<br>黑盒测试方法中，设计测试用例的主要根据是程序外部功能<br>黑盒测试的测试方法有：等价类划分、边界值分析法、猜错法、随机数法、因果图<br>白盒测试方法:逻辑覆盖，基本路径测试。<br>概念设计阶段E-R图<br>在PFD图中用箭头表示控制流<br>软件开发必要的测试数据是辅助资源。<br>回归测试不属于软件测试实施步骤。<br>一般地，软件开发模式：1.边做边改模型2.瀑布模型3.演化模型4.增量模型5.螺旋模型6.喷泉模型7.敏捷模型-SCRUM没有扇形。<br>E-R图：矩形框：实体。椭圆形：实体属性。菱形：实体之间关系。<p></p>
+<p></p><h1>数据库</h1><br>数据库（DB）、数据库系统（DBS）和数据库管理系统（DBMS）<br>DDL 是数据定义语言（defintion）<br>DML 是数据操纵语言（manipulation）<br>DCL 是数据控制语言（control）<br>数据库设计的四个阶段按顺序为需求分析、概念设计，逻辑设计、物理设计<br>数据库应用系统中的核心问题是数据库设计<br>数据库技术的目标是解决数据共享问题<br>数据库系统包括数据库管理系统和数据库<br>数据库的三种模式：<br>内模式处于最底层，它反映了数据在计算机物理结构中的实际存储形式，<br>概念模式处于中间层，它反映了设计者的数据全局逻辑要求，且为全体用户公共视图。<br>外模式处于最外层，它反映了用户对数据的要求。<br>主属性不能重复，非主属性可以重复。<br>数据库内部采用三级模式和二级映射，为了提高数据独立性，即物理独立性和逻辑独立性。<p></p>
+<p>int(true)=1<br>Python 中函数不包括参数函数<br>知道了三角形三边：a,b,c。三角形面积：p = (a+b+c)/2  pow(p <em> (p-a)</em>(p-b)*(p-c),0.5)<br>Python capitalize()将字符串的第一个字母变成大写,其他字母变小写。</p>
+<p>栈支持子程序调用。<br>python同一行显示多条语句时：可以用；隔开（像PHP一样）<br>str.join(objext)连接符，可以把字符串，序列，字典（链接键）通过str连接起来。<br>Python 中允许利用 raise 语句由程序主动引发异常<br>空树根结点为零<br>在 Python 中，类型属于对象，变量是没有类型的。<br>fileObject.open()只是打开，不能创建。<br>dict.get(key, default=None)键存在返回相应值，不存在返回default，<br>常用语句：d[i]=d.get(i,0)+1<br>d.items()返回字典键值对元组组成的列表。<br>list.sort(key=none,reverse=false)</p>
+<p>字符串比较大小：<br>比较规则是，从第一个字符开始，顺次向后直到出现不同的字符为止，然后以第一个不同的字符的ASCII值确定，例如上面的”abc”和”aabdfg”，由于第一个字符相同，都是’a’所以看下一个字符，第二个字符，一个是’b’,一个是‘a’，由于b的ASCII值比a的ASCII值大，所以，这二个字符串的比较结果是”abc”&gt;”aabdfg”<br>ascll编码：从小到大：0-9，A-Z，a-z。</p>
+<p>更新pip: pip install -U pip<br>前序遍历的第一个值就是根节点，然后再中序遍历中找到这个值，那么这个值的左边部分即为当前二叉树的左子树部分前序遍历结果，这个值的右边部分即为当前二叉树的右子树部分前序遍历结果。根据这句话，然后递归。<br>（前中后遍历，是相对于根节点遍历先后来说的）<br>str.upper()函数返回str的大写格式（需要变量接收，注意没用变量接收的陷阱）<br>str.strip(‘’)移除str两端指定字符<br>str.split(“n”)把字符串以n分隔开。<br>字典是高维数据。</p>
+<p>顺序查找：n</p>
+<p>二叉树：<br>性质1：二叉树第i层上的结点数目最多为 2{i-1} (i≥1)。<br>性质2：深度为k的二叉树至多有2{k}-1个结点(k≥1)。<br>性质3：包含n个结点的二叉树的高度至少为log2 (n+1)。<br>性质4：在任意一棵二叉树中，若终端结点的个数为n0，度为2的结点数为n2，则n0=n2+1。</p>
+<p>一维数据不能用字段储存</p>
+<p>程序一般有顺序，选择，循环三种结构。</p>
+<p>变量的命名应具有一定的实际意义。<br>空字符串布尔值是false。<br>isatty()判断是否连到终端。<br>字符串不能更改。<br>变量不用声明，直接赋值使用。<br>写入文件的必须是str类型。<br>数据处理的最小单位是数据项<br>对于中文文本，Wordcloud分词处理需要用户来完成。<br>Wordcloud的mask控制词云形状<br>Python字符串中每个字符都是Unicode编码字符<br>str.reverse()方法返回倒序的str，并且改变原来的str。（list也有reverse方法）<br>str.index(a)str中存在a，则返回a的索引，不存在则报错。<br>for i in ls时，for循环中删除一个ls中的元素，则少循环一次。<br>文本文件是由单一特定编码的字符组成，内容易于统一展示和阅读，至少有一个换行符<br>注意time，random，turtle是标准库，结巴是第三方库。<br>max(listV)：返回列表最大值<br>seek() 方法用于移动文件读取指针到指定位置。<br>字典：值可以取任何数据类型，但键必须是不可变的，如字符串，数字或元组。键不能是列表。</p>
+<p>对字典的值进行排序：</p>
+<p>#先把字典cid转换为元组组成的列表cil<br>cil = list(cid.items())</p>
+<p>#对列表cil进行排序，键为每个元组的第二个值，降序排列。<br>cil.sort(key= lambda x:x[1], reverse=True)</p>
 <p>程序设计：<br><img src="https://s2.ax1x.com/2019/02/16/ksDRgS.png"><br><img src="https://s2.ax1x.com/2019/02/16/ksD5Hs.png"><br>这道题遇过不下三遍了，还是有一定思维含量的，最终百度出<br><img src="https://s2.ax1x.com/2019/02/16/ksDoEn.png"><br>很明显，用了第三个方法实现。（笑哭，最大公约数，印象中是小学知识，感觉自己连小学生都不如了）</p>
 <p></p><h3>一些思想</h3><br>turtle画法思想：<br>旋转其他重复代码到例子代码图形，计算关于i的角度关系。<br>把最后一次i的绘图旋转到倒数第三次，观察指针，找出角度。<p></p>
 
@@ -1024,7 +1039,8 @@
 
           
 
---网易云音乐
+
+
 <div id="music163player">
     <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="280" height="86" src="//music.163.com/outchain/player?type=2&id=504974392&auto=0&height=66">
     </iframe>
