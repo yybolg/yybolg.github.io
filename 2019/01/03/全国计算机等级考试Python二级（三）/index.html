@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next32.jpg?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next16.jpg?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="基本数据类型">
+<meta property="og:type" content="article">
+<meta property="og:title" content="全国计算机等级考试Python二级（三）">
+<meta property="og:url" content="https://yy.github.io/2019/01/03/全国计算机等级考试Python二级（三）/index.html">
+<meta property="og:site_name" content="yy">
+<meta property="og:description" content="基本数据类型">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="
+https://s2.ax1x.com/2019/02/19/kg0HiR.png">
+<meta property="og:image" content="
+https://s2.ax1x.com/2019/02/19/kg0To9.png">
+<meta property="og:image" content="
+https://s2.ax1x.com/2019/02/19/kg0Lz6.png">
+<meta property="og:updated_time" content="2019-03-20T08:21:51.800Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="全国计算机等级考试Python二级（三）">
+<meta name="twitter:description" content="基本数据类型">
+<meta name="twitter:image" content="
+https://s2.ax1x.com/2019/02/19/kg0HiR.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://yy.github.io/2019/01/03/全国计算机等级考试Python二级（三）/">
+
+
+
+
+
+  <title>全国计算机等级考试Python二级（三） | yy</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <a href="https://github.com/yybolg" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">yy</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">无趣的写手，有趣的人。</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-主页">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            主页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-分类">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-归档">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://yy.github.io/2019/01/03/全国计算机等级考试Python二级（三）/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="yy">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/touxiang.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="yy">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">全国计算机等级考试Python二级（三）</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-03T16:48:10+08:00">
+                2019-01-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/计算机二级考试/" itemprop="url" rel="index">
+                    <span itemprop="name">计算机二级考试</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  1.9k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  7
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>基本数据类型<br><a id="more"></a></p>
+<p></p><h2>数字类型</h2><br>数字类型：整数类型、浮点数类型、复数类型。<br>整数类型：十进制、二进制、八进制和十六进制。<br><img src="
+https://s2.ax1x.com/2019/02/19/kg0HiR.png"><p></p>
+<p>不同进制的整数之间可以直接运算</p>
+<pre><code>&gt;&gt;&gt; 0x3F2/1010
+</code></pre><p>1.0</p>
+<pre><code>&gt;&gt;&gt; (0x3F2+1010)/0o1762
+</code></pre><p>2.0<br>浮点数类型：必须带有小数部分，小数部分可以是0，例如1010.0。表示方法有一般表示（只有十进制）和科学计数法。数值范围和小数精度受不同计算机系统的限制，一般认为没有范围限制。有不确定尾数。</p>
+<p>科学计数法 格式：<a>e<b> = a*10的b次方 （或E）<br>    &gt;&gt;&gt; print(1.01e3)<br>1010.0<br>    &gt;&gt;&gt; print(-1.01E-3)<br>-0.00101<br>/#浮点数不确定尾数<br>    &gt;&gt;&gt; 0.1 + 0.2<br>0.30000000000000004<br>    &gt;&gt;&gt; 0.1 + 0.2 == 0.3<br>False</b></a></p>
+<p>#使用round()函数四舍五入 限定保留尾数 去掉不确定尾数<br>    &gt;&gt;&gt; round(0.1 + 0.2,3) == 0.3<br>True<br>复数类型：含有虚数单位（j）的数。可以看作是二元有序实数对（a, b），表示为：a + bj，a是实数部分，简称实部，b是虚数部分，简称虚部。当b为1时，1不能省略，1j表示复数，j表示Python程序中的一个变量。</p>
+<p>#获得实数部分<br>    &gt;&gt;&gt; (1.23e4+5.64e4j).real<br>12300.0</p>
+<p>#获得虚数部分<br>    &gt;&gt;&gt; (1.23e4+5.64e4j).imag<br>56400.0</p>
+<blockquote>
+<blockquote>
+<blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<p></p><h2>数字类型的运算</h2><br>9个基本的数值运算操作符：<br><img src="
+https://s2.ax1x.com/2019/02/19/kg0To9.png"><p></p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>2+5<br>7<br>2-5<br>-3<br>2<em>5<br>10<br>2/5<br>0.4<br>2//5<br>0<br>2%5<br>2<br>5%2<br>1<br>-5<br>-5<br>+5<br>5<br>2**5<br>32<br> 整数和浮点数运算结果为浮点数，整数/整数结果为浮点数，整数或浮点数与复数运算结果为复数。<br>增强赋值操作符：+=、-=、</em>=、/=、//=、%=、<strong>=<br>x=3<br>x</strong>=3    #等价于x = x**3<br>print(x)<br>27<br>数值运算函数：</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>#绝对值</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>abs(-666)<br>666</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>#返回二元组（x//y,x%y），即（整数商,除法余数）</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>divmod(10,3)<br>(3, 1)</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>#x的y次幂，即x**y</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>pow(3,3)<br>27</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>#x的y次幂%z （模运算与幂运算同时进行 速度更快）</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>pow(55,1999999,10000)<br>4375</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>#四舍五入</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>round(6.6)<br>7</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>#保留小数尾数四舍五入</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>round(3.1415926,3)<br>3.142</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>#取最大值</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>max(1,2,3,4,5,0.1)<br>5</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>#取最小值</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>min(1,2,3,4,5,0.1)<br>0.1</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p></p><h2> 字符串类型及格式化</h2><br>单行字符串可以由一对单引号（’）或双引号（”）作为边界来表示，单引号和双引号作用相同<br>多行字符串可以由一对三单引号（’’’）或三双引号（”””）作为边界来表示，两者作用相同。<p></p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>print(‘这是”单行字符串”‘)<br>这是”单行字符串”<br>print(“这是’单行字符串’”)<br>这是’单行字符串’<br>print(“””这是’多行字符串’的第一行<br>这是’多行字符串’的第二行<br>“””)<br>这是’多行字符串’的第一行<br>这是’多行字符串’的第二行<br>print(‘’’这是”多行字符串”的第一行<br>这是”多行字符串”的第二行<br>‘’’)<br>这是”多行字符串”的第一行<br>这是”多行字符串”的第二行<br>语言转义符： \ 。例如：\n表示换行、\表示反斜杠、\’表示单引号、\”表示双引号、\t表示制表符（TAB）等。<br>print(“既需要’单引号’又需要\”双引号\””)<br>既需要’单引号’又需要”双引号”<br> 字符串的索引：<br>“青青子衿,悠悠我心。”[-5]<br>‘悠’<br>s = “青青子衿,悠悠我心。”<br>s[5]<br>‘悠’<br>字符串的切片：<br>“青青子衿,悠悠我心。”[8:4]<br>‘’<br>“青青子衿,悠悠我心。”[:4]<br>‘青青子衿’<br>“青青子衿,悠悠我心。”[5:]<br>‘悠悠我心。’<br>print(“青青子衿,悠悠我心。”[5:])<br>悠悠我心。<br>format()方法使用：”包含{ }的字符串模板”.format(逗号分隔的参数1,2,3…)   参数从0开始编号，{ }代表槽<br>“{}曰：学而时习之，不亦{}。”.format(“孔子”,”说乎”)<br>‘孔子曰：学而时习之，不亦说乎。<br>“{1}曰：学而时习之，不亦{0}。”.format(“说乎”,”孔子”)<br>‘孔子曰：学而时习之，不亦说乎。’<br>format()方法中模板字符串的槽除了包括参数序号，还可以包括格式控制信息。{&lt;参数序号&gt;: &lt;格式控制标记&gt;}<br>s = “等级考试”<br>“{:25}”.format(s)            #左对齐，默认<br>‘等级考试<br>                     ‘<br>“{:^25}”.format(s)          #居中对齐<br>‘          等级考试           ‘<br>“{:&gt;25}”.format(s)          #右对齐<br>‘                     等级考试’<br>“{:<em>^25}”.format(s)         #居中对齐且填充</em>号<br>‘<strong><strong>**</strong></strong>等级考试<strong><strong>***</strong></strong>‘<br>“{:+^25}”.format(s)         #居中对齐且填充+号<br>‘++++++++++等级考试+++++++++++’<br>“{:十^25}”.format(s)        #居中对齐且填充汉字“十”<br>‘十十十十十十十十十十等级考试十十十十十十十十十十十’<br>“{:^1}”.format(s)           #z指定宽度为1，不足变量s的宽度<br>‘等级考试’<br>“{:.2f}”.format(12345.67890)<br>‘12345.68’<br>“{:&gt;25.3f}”.format(12345.67890)<br>‘                12345.679’<br>“{:.5}”.format(“全国计算机等级考试”)<br>‘全国计算机’<br>“{:b},{:c},{:d},{:o},{:x},{:X}”.format(425)<br>‘110101001,Ʃ,425,651,1a9,1A9’<br>“{:e},{:E},{:f},{:%}”.format(3.14)<br>‘3.140000e+00,3.140000E+00,3.140000,314.000000%’<br>“{:.2e},{:.2E},{:.2f},{:.2%}”.format(3.14) # 对比输出<br>‘3.14e+00,3.14E+00,3.14,314.00%’</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>#常用的format()方法格式控制信息</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>“{:.2f}”.format(3.1415926)   # 输出小数点后两位<br>‘3.14’<br>“{:x}”.format(1010)           # 输出整数的十六机制形式<br>‘3f2’<br>“{:.5}”.format(“这是一个很长的字符串”)  # 输出字符串的前5位<br>‘这是一个很’<br>“{:-^10}”.format(“PYTHON”)   # 居中并填充<br>‘–PYTHON–’<br> </p><h2>字符串类型的操作</h2><br>字符串操作符：<p></p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>#连接两个字符串x与y</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>“PHP” + “是世界上最好的语言”<br>‘PHP是世界上最好的语言’</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>#复制n次字符串x</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>“lws”*3<br>‘lwslwslws’</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>#如果x是s的子串，返回True，否则返回False</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>name = “lws”<br>l in name<br>“l” in name<br>True<br>字符串处理函数：</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>#返回字符串x的长度</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>len(“lws”)<br>3</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>#返回任意类型x所对应的字符串形式</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>str(0x3f)<br>‘63’</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>#返回Unicode编码x对应的单字符</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>chr(10000)<br>‘✐’</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>#返回单字符x表示的Unicode编码</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>ord(“和”)<br>21644</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>#返回整数x对应十六进制数的小写形式字符串</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>hex(1010)<br>‘0x3f2’</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>#返回整数x对应八进制数的小写形式字符串</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>oct(-255)<br>‘-0o377’<br>字符串处理方法：采用<a>.func(x)形式调用。方法仅作用于前导对象<a><br><img src="
+https://s2.ax1x.com/2019/02/19/kg0Lz6.png"><br>“Python is an excellent language.”.split()<br>[‘Python’, ‘is’, ‘an’, ‘excellent’, ‘language.’]<br>“Python is an excellent language.”.split(‘a’)<br>[‘Python is ‘, ‘n excellent l’, ‘ngu’, ‘ge.’]</a></a></p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>#str.count(sub)方法返回字符串str中出现sub的次数，sub是一个字符串。</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>“Python is an excellent language.”.count(‘a’)<br>3</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>#str.replace(old, new)方法将字符串str中出现的old字符串替换为new字符串，old和new的长度可以不同。</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>“Python is an excellent language.”.replace(‘a’, ‘#’)<br>‘Python is #n excellent l#ngu#ge.’<br>“Python is an excellent language.”.replace(‘Python’, ‘C’)<br>‘C is an excellent language.’<br>str.center(width, fillchar)方法返回长度为width的字符串，其中，str处于新字符串中心位置，两侧新增字符采用fillchar填充，当width小于字符串长度时，返回str。其中，fillchar是单个字符。<br>“Python”.center(20, “=”)<br>‘=======Python=======’<br>“Python”.center(2, “=”)<br>‘Python’</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p></p><h2>类型判断和类型间转换</h2><br>Python语言提供type(x)函数对变量x进行类型判断，适用于任何数据类型。<br>n = eval(input(‘请输入一个数字:’))<br>if type(n) == type(123):<br>print(“输入的数字是整数。”)<br>elif type(n) == type(11.3):<br>print(“输入的数字是浮点数。”)<br>else:<br>print(“无法判断输入类型。”)<br>通过内置的数字类型转换函数转换：<p></p>
+<p>#浮点数或字符串转换为整数</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>int(10.01)<br>10</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>#整数或字符串转换为浮点数</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>float(10)<br>10.0</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>#整数或浮点数转换为字符串</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>str(10.0)<br>‘10.0’<br>第三章结束，</p>
+</blockquote>
+</blockquote>
+</blockquote>
+
+      
+    </div>
+    
+    
+    
+    <div>
+      
+        
+
+      
+    </div>
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>打赏的同时你也结识了一个有趣的人奥~</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="yy WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="yy Alipay">
+        <p>Alipay</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div id="needsharebutton-postbottom">
+            <span class="btn">
+              <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </span>
+          </div>
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/01/02/全国计算机等级考试Python二级（二）/" rel="next" title="全国计算机等级考试Python二级(二）">
+                <i class="fa fa-chevron-left"></i> 全国计算机等级考试Python二级(二）
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/01/04/全国计算机等级考试Python二级（四）/" rel="prev" title="全国计算机等级考试Python二级（四）">
+                全国计算机等级考试Python二级（四） <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/touxiang.jpg" alt="yy">
+            
+              <p class="site-author-name" itemprop="name">yy</p>
+              <p class="site-description motion-element" itemprop="description">To knowledge!!!</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+
+
+<div id="music163player">
+    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="280" height="86" src="//music.163.com/outchain/player?type=2&id=504974392&auto=0&height=66">
+    </iframe>
+</div>
+
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">数字类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">数字类型的运算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">3.</span> <span class="nav-text"> 字符串类型及格式化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">4.</span> <span class="nav-text">字符串类型的操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">5.</span> <span class="nav-text">类型判断和类型间转换</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">yy</span>
+
+  
+</div>
+
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+<span id="busuanzi_container_site_pv">
+    本站总访问量<span id="busuanzi_value_site_pv"></span>次
+</span>
+
+  <span class="post-meta-divider">|</span>
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
+
+  
+  
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+      pbOptions = {};
+      
+          pbOptions.iconStyle = "box";
+      
+          pbOptions.boxForm = "horizontal";
+      
+          pbOptions.position = "bottomCenter";
+      
+          pbOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-postbottom', pbOptions);
+    
+    
+  </script>
+
+  
+
+  
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":100,"height":200},"mobile":{"show":true},"log":false});</script></body>
+</html>

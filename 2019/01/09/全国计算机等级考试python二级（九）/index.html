@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next32.jpg?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next16.jpg?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Python标准库概览">
+<meta property="og:type" content="article">
+<meta property="og:title" content="全国计算机等级考试Python二级（九）">
+<meta property="og:url" content="https://yy.github.io/2019/01/09/全国计算机等级考试python二级（九）/index.html">
+<meta property="og:site_name" content="yy">
+<meta property="og:description" content="Python标准库概览">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://s2.ax1x.com/2019/02/19/kgBr6K.png">
+<meta property="og:image" content="https://img-blog.csdn.net/20180916000035658?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21zbGx3cw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:image" content="https://img-blog.csdn.net/2018091600205695?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21zbGx3cw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:image" content="https://img-blog.csdn.net/20180916003038140?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21zbGx3cw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:image" content="https://tse1.mm.bing.net/th?id=OIP.3tAKCe0Yp0-FgDc6nI0e0QHaHa&pid=Api">
+<meta property="og:updated_time" content="2019-03-20T08:22:06.606Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="全国计算机等级考试Python二级（九）">
+<meta name="twitter:description" content="Python标准库概览">
+<meta name="twitter:image" content="https://s2.ax1x.com/2019/02/19/kgBr6K.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://yy.github.io/2019/01/09/全国计算机等级考试python二级（九）/">
+
+
+
+
+
+  <title>全国计算机等级考试Python二级（九） | yy</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <a href="https://github.com/yybolg" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">yy</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">无趣的写手，有趣的人。</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-主页">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            主页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-分类">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-归档">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://yy.github.io/2019/01/09/全国计算机等级考试python二级（九）/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="yy">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/touxiang.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="yy">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">全国计算机等级考试Python二级（九）</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-09T16:48:10+08:00">
+                2019-01-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/计算机二级考试/" itemprop="url" rel="index">
+                    <span itemprop="name">计算机二级考试</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  2.1k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  8
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Python标准库概览<br><a id="more"></a></p>
+<p></p><h2>turtle库概述</h2><br>turtle库：Python重要的标准库之一，进行基本的图形绘制。<p></p>
+<p>三种引入方式：</p>
+<p>import turtle<br>turtle.circle(200)</p>
+<p>from turtle import *<br>circle(200)</p>
+<p>import turtle as t<br>t.circle(200)</p>
+<p></p><h2>turtle库与基本绘图</h2><br>窗体函数：<p></p>
+<p>turtle.setup(width, height, startx, starty)</p>
+<p>作用：设置主窗体的大小和位置<br>参数：<br>width ：窗口宽度，如果值是整数，表示的像素值；如果值是小数，表示窗口宽度与屏幕的比例；<br>height: 窗口高度，如果值是整数，表示的像素值；如果值是小数，表示窗口高度与屏幕的比例；<br>startx：窗口左侧与屏幕左侧的像素距离，如果值是None，窗口位于屏幕水平中央；<br>starty：窗口顶部与屏幕顶部的像素距离，如果值是None，窗口位于屏幕垂直中央；<br>画笔状态函数：<br>pen.up()抬起画笔<br>pen.down()放下画笔</p>
+<p>画笔运动函数：<br>pen.fd()向前移动</p>
+<p></p><h2>random库概述</h2><br>random库：生成随机数。<p></p>
+<p></p><h2>random库与随机数运用</h2><br>常用函数：<br><img src="https://s2.ax1x.com/2019/02/19/kgBr6K.png"><p></p>
+<p>随机数种子：准确复现随机数序列，用于重复程序的运行轨迹。如果没有设置，默认以当前系统的运行时间为种子产生随机序列。</p>
+<p></p><h2>time库概述</h2><br>time库：时间处理、时间格式化和计时。可以用来分析程序性能，也可让程序暂停运行时间。<p></p>
+<p>时间处理：time.time()、time.gmtime()、time.localtime() 、time.ctime()。<br>时间格式化：time.mktime()、time.strftime()、time.strptime()。<br>计时：time.sleep()、time.monotonic()、time.perf_counter()</p>
+<p>使用time.time()获取当前时间戳</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>import time<br>time.time()<br>1516939876.6022282</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>使用time.gmtime(secs)获取当前时间戳对应的struct_time对象</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>time.gmtime(now)<br>time.struct_time(tm_year=2018, tm_mon=1, tm_mday=26, tm_hour=4, tm_min=11, tm_sec=16, tm_wday=4, tm_yday=26, tm_isdst=0)</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>使用time.localtime(secs)获取当前时间戳对应的本地时间的struct_time对象<br>注意结果与gmtime的区别，UTC时间已自动转换为北京时间</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>time.localtime(now)<br>time.struct_time(tm_year=2018, tm_mon=1, tm_mday=26, tm_hour=12, tm_min=11, tm_sec=16, tm_wday=4, tm_yday=26, tm_isdst=0)</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>使用time.ctime(secs)获取当前时间戳对应的易读字符串表示，内部会调用time.localtime()函数以输出当地时间。</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>time.ctime(now)<br>‘Fri Jan 26 12:11:16 2018’</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>调用time.mktime(t)函数</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>t = time.localtime(now)<br>time.mktime(t)<br>1516939876.0<br>time.ctime(time.mktime(t))<br>‘Fri Jan 26 12:11:16 2018’</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>time.strftime()函数是时间格式化最有效的方法，几乎可以以任何通用格式输出时间。该方法利用一个格式字符串，对时间格式进行表达。</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>lctime = time.localtime()<br>lctime<br>time.struct_time(tm_year=2018, tm_mon=1, tm_mday=26, tm_hour=12, tm_min=55, tm_sec=20, tm_wday=4, tm_yday=26, tm_isdst=0)<br>time.strftime(“%Y-%m-%d %H:%M:%S”, lctime)<br>‘2018-01-26 12:55:20’</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>strptime()方法与strftime()方法完全相反，用于提取字符串中时间来生成strut_time对象，可以很灵活的作为time模块的输入接口</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>timeString = ‘2018-01-26 12:55:20’<br>time.strptime(timeString, “%Y-%m-%d %H:%M:%S”)<br>time.struct_time(tm_year=2018, tm_mon=1, tm_mday=26, tm_hour=12, tm_min=55, tm_sec=20, tm_wday=4, tm_yday=26, tm_isdst=-1)<br>strftime()方法的格式化控制符：</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p><img src="https://img-blog.csdn.net/20180916000035658?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21zbGx3cw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70"></p>
+<p></p><h2>time库与程序计时</h2><br>以1千万次循环为主体，模拟实际程序的核心模块，用time.sleep()来模拟实际程序的其他模块。<p></p>
+<p>import time<br>def coreLoop():<br>    limit = 10**8<br>    while (limit &gt; 0):<br>        limit -= 1<br>def otherLoop1():<br>    time.sleep(0.2)<br>def otherLoop2():<br>    time.sleep(0.4)<br>def main():<br>    startTime = time.localtime()<br>    print(‘程序开始时间：’, time.strftime(‘%Y-%m-%d %H:%M:%S’, startTime))<br>    startPerfCounter = time.perf_counter()<br>    otherLoop1()<br>    otherLoop1PerfCounter = time.perf_counter()<br>    otherLoop1Perf = otherLoop1PerfCounter - startPerfCounter<br>    coreLoop()<br>    coreLoopPerfCounter = time.perf_counter()<br>    coreLoopPerf = coreLoopPerfCounter - otherLoop1PerfCounter<br>    otherLoop2()<br>    otherLoop2PerfCounter = time.perf_counter()<br>    otherLoop2Perf = otherLoop2PerfCounter - coreLoopPerfCounter<br>    endPerfCounter = time.perf_counter()<br>    totalPerf = endPerfCounter - startPerfCounter<br>    endTime = time.localtime()<br>    print(“模块1运行时间是:{}秒”.format(otherLoop1Perf))<br>    print(“核心模块运行时间是:{}秒”.format(coreLoopPerf))<br>    print(“模块2运行时间是:{}秒”.format(otherLoop2Perf))<br>    print(“程序运行总时间是:{}秒”.format(totalPerf))<br>    print(‘程序结束时间：’, time.strftime(‘%Y-%m-%d %H:%M:%S’, endTime))<br>main()<br>程序运行的输出效果如下：<br>程序开始时间： 2017-12-26 13:46:39<br>模块1运行时间是:0.20003105182731706秒<br>核心模块运行时间是:5.987101639820927秒<br>模块2运行时间是:0.40018931343066555秒<br>程序运行总时间是:6.587323585324574秒<br>程序结束时间： 2017-12-26 13:46:45</p>
+<p></p><h1>Python第三方库的获取和安装</h1><br>三个方法：pip工具安装、自定义安装和文件安装。<br>pip工具安装：最高效，最主要。pip install &lt;拟安装库名&gt;<br>自定义安装：按照第三方库提供的步骤和方式安装。以科学计算用的numpy为例，开发者维护的官方主页是：<a href="http://www.numpy.org/浏览该网页找到下载链接，如下：http://www.scipy.org/scipylib/download.html进而根据指示步骤安装。" target="_blank" rel="noopener">http://www.numpy.org/浏览该网页找到下载链接，如下：http://www.scipy.org/scipylib/download.html进而根据指示步骤安装。</a><br>文件安装：为了解决这类第三方库安装问题，美国加州大学尔湾分校提供了一个页面，帮助Python用户获得Windows可直接安装的第三方库文件，<a href="http://www.lfd.uci.edu/~gohlke/pythonlibs/" target="_blank" rel="noopener">http://www.lfd.uci.edu/~gohlke/pythonlibs/</a><br>pip工具使用：<p></p>
+<p>#列出pip常用的子命令<br>pip -h</p>
+<p>#安装<br>pip -install</p>
+<p>#下载不安装<br>pip -download</p>
+<p>#卸载<br>pip -uninstall</p>
+<p>#列出当前系统中已经安装的第三方库<br>pip -list</p>
+<p>#联网搜索库名或摘要中关键字<br>pip -search<br>#</p>
+<p>#列出某个已经安装库的详细信息<br>pip show &lt;拟查询库名&gt;</p>
+<p></p><h2>PyInstaller库概述</h2><br>PyInstaller库：将Python源文件打包，变成直接可运行的可执行文件<br>#<br>PyInstaller库与程序打包<p></p>
+<p>#对Python源文件打包<br>:>PyInstaller &lt;Python源程序文件名&gt;<br> #</p>
+<p>#对Python源文件生成一个独立的可执行文件<br>:>PyInstaller -F &lt;Python源程序文件名&gt;<br>常用参数：<br><img src="https://img-blog.csdn.net/2018091600205695?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21zbGx3cw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70"></p>
+<p></p><h2>jieba库概述</h2><br>jieba库：中文分词。<br>精确模式，将句子最精确地切开，适合文本分析。<br>全模式，把句子中所有可以成词的词语都扫描出来，速度非常快，但是不能解决歧义。<br>搜索引擎模式，在精确模式基础上，对长词再次切分，提高召回率，适合用于搜索引擎分词。<br>jieba库与中文分词<br>jieba.lcut(s) 用于精准模式，将字符串分割成等量的中文词组，返回结果是列表类型<p></p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>import jieba<br>ls = jieba.lcut(“全国计算机等级考试Python科目”)<br>print(ls)<br>[‘全国’, ‘计算机’, ‘等级’, ‘考试’, ‘Python’, ‘科目’]<br>jieba.lcut(s, cut_all = True)用于全模式，即将字符串的所有分词可能均列出来，返回结果是列表类型，冗余性最大。<br>import jieba<br>ls = jieba.lcut(“全国计算机等级考试Python科目”, cut_all=True)<br>print(ls)<br>[‘全国’, ‘国计’, ‘计算’, ‘计算机’, ‘算机’, ‘等级’, ‘考试’, ‘Python’, ‘科目’]<br>jieba.lcut_for_search(s)返回搜索引擎模式，首先执行精确模式，然后再对其中长词进一步切分获得最终结果。<br>import jieba<br>ls = jieba.lcut_for_search(“全国计算机等级考试Python科目”)<br>print(ls)<br>[‘全国’, ‘计算’, ‘算机’, ‘计算机’, ‘等级’, ‘考试’, ‘Python’, ‘科目’]<br>jieba.add_word()函数，向jieba词库增加新的单词。<br>import jieba<br>jieba.add_word(“Python科目”)<br>ls = jieba.lcut(“全国计算机等级考试Python科目”)<br>print(ls)<br>[‘全国’, ‘计算机’, ‘等级’, ‘考试’, ‘Python科目’]</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p></p><h2>wordcloud库概述</h2><br>worldcloud库：根据文本生成词云。<p></p>
+<p></p><h2>wordcloud库与可视化词云</h2><br>import jieba<br>from wordcloud import WordCloud<br>txt = ‘程序设计语言是计算机能够理解和识别用户操作意图的一种交互体系，它按照特定规则组织计算机指令，使计算机能够自动进行各种运算处理。’<br>words = jieba.lcut(txt)        # 精确分词<br>newtxt = ‘ ‘.join(words)       # 空格拼接<br>wordcloud = WordCloud(font_path=”msyh.ttc”).generate(newtxt)<br>wordcloud.to_file(‘词云中文例子图.png’)        # 保存图片<br>WordCloud对象创建的常用参数：<br><img src="https://img-blog.csdn.net/20180916003038140?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21zbGx3cw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70"><p></p>
+<p></p><h1>Python第三方库纵览</h1><br>网络爬虫方向<br>requests、scrapy<br>数据分析方向<br>numpy、scip、pandas<br>文本处理方向<br>pdfminer、openpyxl、python-docx、beautifulsoup4<br>数据可视化方向<br>matplotib、TVTK<br>用户图形界面方向<br>pyqt5、wxpython、pygtk<br>机器学习方向<br>Scikit-learn、TensorFlow、Theano<br>Web开发方向<br>Django、Pyramid、Flask<br>游戏开发方向<br>Pygame、Panda3D、cocos2d<br>更多第三方库<br>PIL：图像处理<br>SymPy：支持符号计算<br>NLTK：自然语言处理(尤其对中文支持良好)<br>WeRoBot：微信公众号开发框架<br>MyQR：生产二维码<br>计算机二级python全部的bolg到这来已经写的差不多了，过不过随缘了，毕竟只是一场考试而已，并不指望最后的结果能给自己带来什么，无非简历上多一句话吧。以后还是要努力，最后：<br><img src="https://tse1.mm.bing.net/th?id=OIP.3tAKCe0Yp0-FgDc6nI0e0QHaHa&pid=Api"><p></p>
+
+      
+    </div>
+    
+    
+    
+    <div>
+      
+        
+
+      
+    </div>
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>打赏的同时你也结识了一个有趣的人奥~</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="yy WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="yy Alipay">
+        <p>Alipay</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div id="needsharebutton-postbottom">
+            <span class="btn">
+              <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </span>
+          </div>
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/01/08/全国计算机等级考试python二级（八）/" rel="next" title="全国计算机等级考试python二级（八）">
+                <i class="fa fa-chevron-left"></i> 全国计算机等级考试python二级（八）
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/01/12/计算机二级python二级错题2/" rel="prev" title="计算机二级python二级错题2">
+                计算机二级python二级错题2 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/touxiang.jpg" alt="yy">
+            
+              <p class="site-author-name" itemprop="name">yy</p>
+              <p class="site-description motion-element" itemprop="description">To knowledge!!!</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+
+
+<div id="music163player">
+    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="280" height="86" src="//music.163.com/outchain/player?type=2&id=504974392&auto=0&height=66">
+    </iframe>
+</div>
+
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">turtle库概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">turtle库与基本绘图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">3.</span> <span class="nav-text">random库概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">4.</span> <span class="nav-text">random库与随机数运用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">5.</span> <span class="nav-text">time库概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">6.</span> <span class="nav-text">time库与程序计时</span></a></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number"></span> <span class="nav-text">Python第三方库的获取和安装</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">PyInstaller库概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">jieba库概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">3.</span> <span class="nav-text">wordcloud库概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">4.</span> <span class="nav-text">wordcloud库与可视化词云</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number"></span> <span class="nav-text">Python第三方库纵览</span></a></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">yy</span>
+
+  
+</div>
+
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+<span id="busuanzi_container_site_pv">
+    本站总访问量<span id="busuanzi_value_site_pv"></span>次
+</span>
+
+  <span class="post-meta-divider">|</span>
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
+
+  
+  
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+      pbOptions = {};
+      
+          pbOptions.iconStyle = "box";
+      
+          pbOptions.boxForm = "horizontal";
+      
+          pbOptions.position = "bottomCenter";
+      
+          pbOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-postbottom', pbOptions);
+    
+    
+  </script>
+
+  
+
+  
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":100,"height":200},"mobile":{"show":true},"log":false});</script></body>
+</html>
