@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next32.jpg?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next16.jpg?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="都是我的错。。。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="错题感悟">
+<meta property="og:url" content="https://yy.github.io/2019/01/15/错题感悟/index.html">
+<meta property="og:site_name" content="yy">
+<meta property="og:description" content="都是我的错。。。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://gss0.baidu.com/-Po3dSag_xI4khGko9WTAnF6hhy/zhidao/wh%3D600%2C800/sign=5337931f3b7adab43d851345bbe49f24/c2cec3fdfc0392457da6c1388a94a4c27d1e25f1.jpg">
+<meta property="og:image" content="https://s2.ax1x.com/2019/02/16/ksDRgS.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/02/16/ksD5Hs.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/02/16/ksDoEn.png">
+<meta property="og:updated_time" content="2019-03-24T03:20:19.067Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="错题感悟">
+<meta name="twitter:description" content="都是我的错。。。">
+<meta name="twitter:image" content="https://gss0.baidu.com/-Po3dSag_xI4khGko9WTAnF6hhy/zhidao/wh%3D600%2C800/sign=5337931f3b7adab43d851345bbe49f24/c2cec3fdfc0392457da6c1388a94a4c27d1e25f1.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://yy.github.io/2019/01/15/错题感悟/">
+
+
+
+
+
+  <title>错题感悟 | yy</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <a href="https://github.com/yybolg" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">yy</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">无趣的写手，有趣的人。</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-主页">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            主页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-分类">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-归档">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://yy.github.io/2019/01/15/错题感悟/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="yy">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/touxiang.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="yy">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">错题感悟</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-15T21:32:38+08:00">
+                2019-01-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/计算机二级考试/" itemprop="url" rel="index">
+                    <span itemprop="name">计算机二级考试</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  3.7k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  13
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>都是我的错。。。<br><a id="more"></a><br>通过Ctrl+F查询关键字，查看我们愚蠢的相似之处。</p>
+<h1>算法</h1>
+
+<h2>数据结构</h2><br>常用的线性结构有：线性表，栈，队列，双队列，数组，串。<br>常见的非线性结构有：二维数组，多维数组，广义表，树(二叉树等)，图<br>双向链表是线性结构，二叉链表是非线性结构。<br>线性结构：1，有且只有一个根节点，2，每一个结点只有一个前件，只有一个后件。<br><br><h2>二叉树</h2><br><img src="https://gss0.baidu.com/-Po3dSag_xI4khGko9WTAnF6hhy/zhidao/wh%3D600%2C800/sign=5337931f3b7adab43d851345bbe49f24/c2cec3fdfc0392457da6c1388a94a4c27d1e25f1.jpg"><br>满二叉树：<br>除最后一层无任何子节点外，每一层上的所有结点都有两个子结点二叉树。<br>国内教程定义：一个二叉树，如果每一个层的结点数都达到最大值，则这个二叉树就是满二叉树。也就是说，如果一个二叉树的层数为K，且结点总数是(2^k) -1 ，则它就是满二叉树。<br>完全二叉树(Complete Binary Tree)<br>若设二叉树的高度为h，除第 h 层外，其它各层 (1～h-1) 的结点数都达到最大个数，第 h 层从右向左连续缺若干结点，这就是完全二叉树。<br>（计算完全二叉树：先判断二叉树倒数第二层处于第几层，然后把最后一层结点除以2，可以计算出倒数第二层有子孙结点的结点个数。然后：总数-前倒数第二层+倒数第二层没有子孙结点的个数）<br>节点：<br>就是一个图中的0、1、2~~14，这些就叫节点。<br>叶子节点：<br>就是没有子节点的节点，比如图中的7、8、9~~14这些，0、1、2、3这些就不是叶子节点。<br>节点度：节点拥有子结点的数量<br>二叉树遍历：前序遍历：根左右，中序遍历：左根右，后序遍历：左右根。（然后递归）<br>一些关于二叉树的结论：<br>树中结点数为所有结点度之和加一。<br>结点的度就是结点拥有的子结点个数。<br>性质1：二叉树第i层上的结点数目最多为 2{i-1} (i≥1)。<br>性质2：深度为k的二叉树至多有2{k}-1个结点(k≥1)。<br>性质3：包含n个结点的二叉树的高度至少为log2 (n+1)。<br>性质4：在任意一棵二叉树中，若终端结点的个数为n0，度为2的结点数为n2，则n0=n2+1。<br>（度为零的结点比度为二的结点多一个）<br><br><h2>数据排序</h2><br>顺序查找最坏情况是n<br>二分查找最坏的情况是log<sub>2</sub>n<br>冒泡最坏情况下，是n<em>(n-1)/2<br>快速排序最坏情况，是n</em>(n-1)/2次<br>直接插入最坏情况：n(n-1)/2<br>最坏情况下排序最快的是希尔排序。<br><br><h1>软件工程</h1><br><br><h2>一般准则</h2><br>软件开发生命周期主要是需求分析<br>集成测试调用接口，主要发现需求分析的错误。<br>需求分析阶段不包括软件可行性研究的依据。<br>DFD是结构化方法的需求分析工具，它支持系统的功能建模。<br>概念设计阶段E-R图<br>在PFD图中用箭头表示控制流<br>软件开发必要的测试数据是辅助资源。<br>回归测试不属于软件测试实施步骤。<br>一般地，软件开发模式：1.边做边改模型2.瀑布模型3.演化模型4.增量模型5.螺旋模型6.喷泉模型7.敏捷模型-SCRUM没有扇形。<br>E-R图：矩形框：实体。椭圆形：实体属性。菱形：实体之间关系。<br>软件工程三要素：方法、工具和过程。<br>模块适中，模块独立，深度宽度扇入扇出适当，减少界面复杂性，设置成单入口单出口。<br>软件工程是应用于计算机软件的定义、开发和维护的一整套方案、工具、文档和实践标准和工序<br>软件概要设计工具：系统结构图。<br>软件详细设计工具：1。图形工具：程序流程图，N-S图，PAD图，HIPO图。2。判定表3.pdl伪代码<br><h2>测试方法</h2>
+
+<p>黑盒测试方法中，设计测试用例的主要根据是程序外部功能<br>黑盒测试的测试方法有：等价类划分、边界值分析法、猜错法、随机数法、因果图<br>白盒测试方法:逻辑覆盖，基本路径测试。</p>
+<h2>结构化程序设计方法</h2><br>主要原则可以概括为自顶向下、逐步求精、模块化(多态继承)及限制使用goto语句.<br><h2>模块独立性</h2><br>模块独立性是指模块内部各部分及模块间的关系的一种衡量标准，由内聚和耦合来度量。<br><h2>常见图表</h2><br>注重实现代码，整个系统执行<br>流程图（描述整个系统的实现过程）<br><br>数据设计工具<br>图形工具（程序流程图，N-S图，问题分析图，PAD）<br>表格工具 （判定表）判定路径是否正确<br>语言工具（program design language，PDL）<br><br>程序流程图<br>两大基础结构：顺序结构 选择结构<br><br>问题分析图<br>顺序图 选择图<br><br>判定表<br>找到路径，根据程序流程图的，在选择结构上进行不同的排列，将所有路径都走过<br>建立对应流成图的判定表，<br>路径为列 选择结构为横<br><br>PDL<br>Jackson方法<br>是一类面向数据结构的设计方法，该方法主要应用于软件的详细设计阶段的Jackson方法<br>这一方法从目标系统的输入、输出数据结构入手，导出程序框架结构，再补充其它细节，就可得到完整的程序结构图。<br>E-R图<br>E-R图也称实体-联系图(Entity Relationship Diagram)<br>转换为关系图时，实体和联系都可以用关系表示。<br>提供了表示实体类型、属性和联系的方法，用来描述现实世界的概念模型。<br>它是描述现实世界关系概念模型的有效方法。是表示概念关系模型的一种方式。用“矩形框”表示实体型，矩形框内写明实体名称；用“椭圆图框”表示实体的属性，并用“实心线段”将其与相应关系的“实体型”连接起来；<br>用”菱形框“表示实体型之间的联系成因，在菱形框内写明联系名，并用”实心线段“分别与有关实体型连接起来，同时在”实心线段“旁标上联系的类型（1:1,1:n或m:n）。<br><br><h1>数据库</h1><br><br><br>数据库（DB）、数据库系统（DBS）和数据库管理系统（DBMS）<br>DDL 是数据定义语言（defintion）<br>DML 是数据操纵语言（manipulation）<br>DCL 是数据控制语言（control）<br>数据库设计的四个阶段按顺序为需求分析、概念设计，逻辑设计、物理设计<br>数据库应用系统中的核心问题是数据库设计<br>数据库技术的目标是解决数据共享问题<br>数据库系统包括数据库管理系统和数据库<br>数据库的三种模式：<br>内模式处于最底层，它反映了数据在计算机物理结构中的实际存储形式，<br>概念模式处于中间层，它反映了设计者的数据全局逻辑要求，且为全体用户公共视图。<br>外模式处于最外层，它反映了用户对数据的要求。<br>主属性不能重复，非主属性可以重复。<br>数据库内部采用三级模式和二级映射，为了提高数据独立性，即物理独立性和逻辑独立性。<br><br><br><br><br><h1>py的其他库</h1><br>Python机器学习方向,人工智能方向的第三方库有：Scikit-learn, TensorFlow, MXNe<br>相关的也整理一下：<br>从数据处理到人工智能<br>python数据分析方向第三方库有：Numpy, SciPy, Pandas<br>Python数据可视化方向的第三方库有：<br>Seaborn, Matplotblib, Mayavi, Bokeh, Gleam, Plotly, visoy, ggplot, geoplotlib,pygal, Arcade, missingno, dataswim<br>Python文本处理方向的第三方库有：PyPDF2, NLTK, Python-docx<br>Python机器学习方向,人工智能方向的第三方库有：Scikit-learn, TensorFlow, MXNet<br>从Web解析到网络空间<br>Python网络爬虫方向的第三方库有：Requests, Scrapy, pyspider（打个广告，博主接单爬虫，微笑）<br>Python Web信息提取方向的第三方库有：Beautiful Soup, Re, Python-Goose<br>Python网站开发框架方向第三方库有：Diango, Pyramid, Flask<br>Python网络应用开发方向第三方库有：WeRoBot, aip, MyQR<br>从人机交互到艺术设计<br>Python图形用户界面的第三方库有：PyQt5, wxPython, PyGObject<br>Python虚拟现实的第三方库有：VR Zero, pyovr, Vizard<br>Python图形艺术方向的第三方库有：ascii_art, Quads, turtle<br>Python游戏开发方向第三方库有：PyGame, Panda3D,FGMK, freegames, Pymunk, gym-supe<br><br><h1>random</h1><br>uniform：生成一个[a, b]之间的随机小数<br>函数传参时，一个星号代表元组，两个星号代表字典。Python random模块sample、randint、shuffle、choice随机函数<br>二、random模块重要函数<br>1 )、random() 返回0&lt;=n《1之间的随机实数n；<br>2 )、choice(seq) 从序列seq中返回随机的元素；<br>3 )、getrandbits(n) 以长整型形式返回n个随机位；<br>4 )、shuffle(seq[, random]) 原地指定seq序列；<br>5 )、sample(seq, n) 从序列seq中选择n个随机且独立的元素<br>6 )、random.uniform(10,100)生成10到100的随机小数。<br>print(参数1,end=””)这样打印结尾不用换行符。<br><h2>格式化填充</h2><br>format填充<br>print(“{0:{1}{2}{3}，}”.format())<br>0的位置填输入的字符串，1：填充物，2：对齐方式，3：输出长度，4，逗号：千位分隔符<br>注意：当填充物为输入数字时，需用eval（）格式化。<br>b: 输出整数的二进制方式；<br>c: 输出整数对应的Unicode字符；<br>d: 输出整数的十进制方式；<br>o: 输出整数的八进制方式；<br>x: 输出整数的小写十六进制方式；<br>X: 输出整数的大写十六进制方式<br><h2>字符串大小比较</h2>
+
+<p>比较规则是，从第一个字符开始，顺次向后直到出现不同的字符为止，然后以第一个不同的字符的ASCII值确定，例如上面的”abc”和”aabdfg”，由于第一个字符相同，都是’a’所以看下一个字符，第二个字符，一个是’b’,一个是‘a’，由于b的ASCII值比a的ASCII值大，所以，这二个字符串的比较结果是”abc”&gt;”aabdfg”<br>ascll编码：从小到大：0-9，A-Z，a-z。</p>
+<p></p><h2>一道错题</h2><br><img src="https://s2.ax1x.com/2019/02/16/ksDRgS.png"><br><img src="https://s2.ax1x.com/2019/02/16/ksD5Hs.png"><br>这道题遇过不下三遍了，还是有一定思维含量的，最终百度出<br><img src="https://s2.ax1x.com/2019/02/16/ksDoEn.png"><br>很明显，用了第三个方法实现。（笑哭，最大公约数，印象中是小学知识，感觉自己连小学生都不如了）<p></p>
+<p></p><h2>零碎知识</h2><br>eval(‘Hello’)<br>eval(“‘Hello’”)<br>第一个报错，第二个无输出<br>报错原因是没有hello变量，第二个应该print（）输出。<br>continue语句跳出本次循环，不是跳出整个循环体。<br>局部变量指在函数内部使用的变量，当函数退出时，变量依然存在，（不存在）下次函数调用可以继续使用<br>局部变量的内存只在函数调用时存在，所以退出时局部变量不存在。（羞愧，这种题都错了。。）<br>lambda：用于定义匿名函数。<br>import sysprint(sys.version)查看版本信息。（鬼知道会有这种题）<br>顺序表可以随机访问任意一个结点，而链表必须从第一个数据结点出发，逐一查找每个结点。<br>循环队列的front=teal时，列队满或者列队空。<br>Python文件处理JPG CSV Excel<br>int(true)=1<br>Python 中函数不包括参数函数<br>知道了三角形三边：a,b,c。三角形面积：p = (a+b+c)/2  pow(p <em> (p-a)</em>(p-b)*(p-c),0.5)<br>Python capitalize()将字符串的第一个字母变成大写,其他字母变小写。<br>栈支持子程序调用。<br>python同一行显示多条语句时：可以用；隔开（像PHP一样）<br>str.join(objext)连接符，可以把字符串，序列，字典（链接键）通过str连接起来。<br>Python 中允许利用 raise 语句由程序主动引发异常<br>空树根结点为零<br>在 Python 中，类型属于对象，变量是没有类型的。<br>fileObject.open()只是打开，不能创建。<br>dict.get(key, default=None)键存在返回相应值，不存在返回default，<br>常用语句：d[i]=d.get(i,0)+1<br>d.items()返回字典键值对元组组成的列表。<br>list.sort(key=none,reverse=false)<br>当文档以文本方式打开时，按照字符串读取，当以二进制打开时，按照字节流读取。<br>更新pip: pip install -U pip<br>前序遍历的第一个值就是根节点，然后再中序遍历中找到这个值，那么这个值的左边部分即为当前二叉树的左子树部分前序遍历结果，这个值的右边部分即为当前二叉树的右子树部分前序遍历结果。根据这句话，然后递归。<br>（前中后遍历，是相对于根节点遍历先后来说的）<br>str.upper()函数返回str的大写格式（需要变量接收，注意没用变量接收的陷阱）<br>str.strip(‘’)移除str两端指定字符<br>str.split(“n”)把字符串以n分隔开。<br>字典是高维数据。<br>一维数据不能用字段储存<br>程序一般有顺序，选择，循环三种结构。<br>变量的命名应具有一定的实际意义。<br>空字符串布尔值是false。<br>isatty()判断是否连到终端。<br>字符串不能更改。<br>变量不用声明，直接赋值使用。<br>写入文件的必须是str类型。<br>数据处理的最小单位是数据项<br>对于中文文本，Wordcloud分词处理需要用户来完成。<br>Wordcloud的mask控制词云形状<br>Python字符串中每个字符都是Unicode编码字符<br>str.reverse()方法返回倒序的str，并且改变原来的str。（list也有reverse方法）<br>str.index(a)str中存在a，则返回a的索引，不存在则报错。<br>for i in ls时，for循环中删除一个ls中的元素，则少循环一次。<br>文本文件是由单一特定编码的字符组成，内容易于统一展示和阅读，至少有一个换行符<br>注意time，random，turtle是标准库，结巴是第三方库。<br>max(listV)：返回列表最大值<br>seek() 方法用于移动文件读取指针到指定位置。<br>字典：值可以取任何数据类型，但键必须是不可变的，如字符串，数字或元组。键不能是列表。<br>aracde是图形库<br>常用排序方法：<br>ls = list(d.items())<br>ls.sort(key=lambda x:x[1], reverse=True) # 此行可以按照词频由高到低排序<p></p>
+
+      
+    </div>
+    
+    
+    
+    <div>
+      
+        
+
+      
+    </div>
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>打赏的同时你也结识了一个有趣的人奥~</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="yy WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="yy Alipay">
+        <p>Alipay</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div id="needsharebutton-postbottom">
+            <span class="btn">
+              <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </span>
+          </div>
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/01/09/全国计算机等级考试python二级（九）/" rel="next" title="全国计算机等级考试Python二级（九）">
+                <i class="fa fa-chevron-left"></i> 全国计算机等级考试Python二级（九）
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/touxiang.jpg" alt="yy">
+            
+              <p class="site-author-name" itemprop="name">yy</p>
+              <p class="site-description motion-element" itemprop="description">To knowledge!!!</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+
+
+<div id="music163player">
+    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="280" height="86" src="//music.163.com/outchain/player?type=2&id=504974392&auto=0&height=66">
+    </iframe>
+</div>
+
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">算法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.1.</span> <span class="nav-text">数据结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.2.</span> <span class="nav-text">二叉树</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.3.</span> <span class="nav-text">数据排序</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">软件工程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">2.1.</span> <span class="nav-text">一般准则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">2.2.</span> <span class="nav-text">测试方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">2.3.</span> <span class="nav-text">结构化程序设计方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">2.4.</span> <span class="nav-text">模块独立性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">2.5.</span> <span class="nav-text">常见图表</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">3.</span> <span class="nav-text">数据库</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">4.</span> <span class="nav-text">py的其他库</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">5.</span> <span class="nav-text">random</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">5.1.</span> <span class="nav-text">格式化填充</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">5.2.</span> <span class="nav-text">字符串大小比较</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">5.3.</span> <span class="nav-text">一道错题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">5.4.</span> <span class="nav-text">零碎知识</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">yy</span>
+
+  
+</div>
+
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+<span id="busuanzi_container_site_pv">
+    本站总访问量<span id="busuanzi_value_site_pv"></span>次
+</span>
+
+  <span class="post-meta-divider">|</span>
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
+
+  
+  
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+      pbOptions = {};
+      
+          pbOptions.iconStyle = "box";
+      
+          pbOptions.boxForm = "horizontal";
+      
+          pbOptions.position = "bottomCenter";
+      
+          pbOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-postbottom', pbOptions);
+    
+    
+  </script>
+
+  
+
+  
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":100,"height":200},"mobile":{"show":true},"log":false});</script></body>
+</html>
