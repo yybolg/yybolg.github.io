@@ -81,13 +81,13 @@
 
 <meta name="description" content="To knowledge!!!">
 <meta property="og:type" content="website">
-<meta property="og:title" content="银色的子弹变灰了">
+<meta property="og:title" content="未来可期，有缘再见。">
 <meta property="og:url" content="https://yy.github.io/page/2/index.html">
-<meta property="og:site_name" content="银色的子弹变灰了">
+<meta property="og:site_name" content="未来可期，有缘再见。">
 <meta property="og:description" content="To knowledge!!!">
 <meta property="og:locale" content="zh-CN">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="银色的子弹变灰了">
+<meta name="twitter:title" content="未来可期，有缘再见。">
 <meta name="twitter:description" content="To knowledge!!!">
 
 
@@ -124,7 +124,7 @@
 
 
 
-  <title>银色的子弹变灰了</title>
+  <title>未来可期，有缘再见。</title>
   
 
 
@@ -157,7 +157,7 @@
     <div class="custom-logo-site-title">
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">银色的子弹变灰了</span>
+        <span class="site-title">未来可期，有缘再见。</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -244,16 +244,205 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://yy.github.io/2018/12/04/我的第一篇bolg/">
+    <link itemprop="mainEntityOfPage" href="https://yy.github.io/2018/12/09/云开发学习笔记/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="银色的子弹变灰了">
+      <meta itemprop="name" content="未来可期，有缘再见。">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/touxiang.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="银色的子弹变灰了">
+      <meta itemprop="name" content="未来可期，有缘再见。">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/12/09/云开发学习笔记/" itemprop="url">云开发学习笔记</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-09T20:22:59+08:00">
+                2018-12-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  454
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  2
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1>用云函数新增一条数据，</h1>
+
+<p>在云函数中初始化云数据库</p>
+<pre><code>cloud.init()
+
+const db = cloud.database({
+env:&quot;环境id&quot;
+})
+const productsCollection = db.collection(&quot;products&quot;)
+</code></pre><p>然后用：productsCollection.add({data:{}})。新增数据。</p>
+<h1> 查询数据，</h1><br>wxml 端<br>用block标签进行轮播。例：<br><br>     <block wx:for=""><br>           <van-card price=""><br>     </van-card></block><br><br> js端<br><br> 初始化数据库后，有get()方法得到20条数据，然后用res的回调将数据写入小程序端。例：<br><br><br>    onLoad: function (options) {<br>    productsCollection.get().then(res =&gt; {<br>      this.setData({<br>        products: res.data<br>      })<br>    })<br>    },<br><br><h2>下拉刷新功能：</h2><br><br> json中加入：<br><br>    “enablePullDownRefresh”:true,<br><br>js中写入onPullDownRefresh函数：<br><br>     onPullDownRefresh: function () {<br>      productsCollection.get().then(res =&gt; {<br>        this.setData({<br>        products: res.data<br>      },res=&gt;{<br>        console.log(“cg”)<br>        wx.stopPullDownRefresh()<br>      })<br>    })<br>    },<br><br>（其中，wx.stopPullDownRefresh()简单理解是缩短刷新数据）<br><br><h2>上滑载入新数据</h2>（微信查询一次数据最多返回20条）：<br><br>json中：<br><br>    “onReachBottomDistance”:100<br><br>其中，100代表一共载入到第100条<br><br>js中：<br><br><br>    onReachBottom: function () {<br>    let page =this.data.page+20<br><br>    productsCollection.skip(page).get().then(res=&gt;{<br>      let old_data=this.data.products<br>      let new_data=res.data<br><br>      this.setData({<br>        products:old_data.concat(new_data),<br>        page:page<br>      },res=&gt;{<br>        console.log(res)<br>        })<br>    })<br><br>     },<br><br>(let 用于在函数中定义变量，变量作用域为本函数。concat用于拼接数据)<br><br><br><br><h1>条件查询</h1><br>挑选出color为red 的数据<br><br>    productsCollection.where({<br>      color:”red”<br>    }).get().then(res =&gt; {<br>      this.setData({<br>        products: res.data<br>      })<br>    })<br><br>挑选出price在40到50之间的<br><br>    productsCollection.where({<br>      price:<em>.lt(50).and(</em>.gt(40))<br>    }).get().then(res =&gt; {<br>      this.setData({<br>        products: res.data<br>      })<br>    })<br><br>查询两条数据<br><br>    productsCollection.limit(2).get().then(res =&gt; {<br>      this.setData({<br>        products: res.data<br>      })<br>    })<br><br>价格降序（asc：升序 ）<br><br>    productsCollection<br>    .orderBy(“price”,”desc”)<br>    .get().then(res =&gt; {<br>      this.setData({<br>        products: res.data<br>      })<br>    })<br><br>统计数据量<br><br>    productsCollection.count().then(res =&gt; {<br>      this.setData({<br>        count: res.total<br><br>      })<br>    })<br><br><br><h1>利用云端判断用户是否登录过</h1>
+
+
+<pre><code>getUserInfo: function (result) {
+wx.cloud.callFunction({
+  name: &apos;getuserinfo&apos;,
+  complete: res =&gt; {
+    userinfo.where({
+      _openid: res.result.openId
+    }).count().then(res =&gt; {
+      if (res.total == 0) {
+        userinfo.add({
+          data: result.detail.userInfo
+        }).then(res =&gt; {
+          console.log(&quot;用户第一次登陆，已写入数据库&quot;)
+
+        }).catch(err =&gt; {
+        })
+      } else {
+        console.log(&quot;这是一个老用户&quot;)
+      }
+    })
+  }
+})
+
+  }
+</code></pre>
+          
+        
+      
+    </div>
+    
+    
+    
+    <div>
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://yy.github.io/2018/12/04/我的第一篇bolg/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="未来可期，有缘再见。">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/touxiang.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="未来可期，有缘再见。">
     </span>
 
     
@@ -427,13 +616,13 @@
     <link itemprop="mainEntityOfPage" href="https://yy.github.io/2018/05/03/2019-2-16记/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="银色的子弹变灰了">
+      <meta itemprop="name" content="未来可期，有缘再见。">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/touxiang.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="银色的子弹变灰了">
+      <meta itemprop="name" content="未来可期，有缘再见。">
     </span>
 
     
@@ -607,13 +796,13 @@
     <link itemprop="mainEntityOfPage" href="https://yy.github.io/2018/02/05/记一次小项目编写/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="银色的子弹变灰了">
+      <meta itemprop="name" content="未来可期，有缘再见。">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/touxiang.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="银色的子弹变灰了">
+      <meta itemprop="name" content="未来可期，有缘再见。">
     </span>
 
     
@@ -811,9 +1000,9 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image" src="/images/touxiang.jpg" alt="银色的子弹变灰了">
+              <img class="site-author-image" itemprop="image" src="/images/touxiang.jpg" alt="未来可期，有缘再见。">
             
-              <p class="site-author-name" itemprop="name">银色的子弹变灰了</p>
+              <p class="site-author-name" itemprop="name">未来可期，有缘再见。</p>
               <p class="site-description motion-element" itemprop="description">To knowledge!!!</p>
           </div>
 
@@ -824,7 +1013,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -887,7 +1076,7 @@
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">银色的子弹变灰了</span>
+  <span class="author" itemprop="copyrightHolder">未来可期，有缘再见。</span>
 
   
 </div>
